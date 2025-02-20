@@ -1,0 +1,12 @@
+$primary: #FFF;
+$secondary: #007AFF;
+
+$header_bg: #12131A;
+$main_bg: #0A0B12;
+$secondary_bg: #11131D;
+
+:export {
+  logo_dark: $main_bg;
+  logo_light: $primary;
+  logo_primary: $secondary;
+}
