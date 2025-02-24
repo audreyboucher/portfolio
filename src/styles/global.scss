@@ -7,9 +7,14 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", serif;
+  outline: none;
 }
 
 html, body {
   background-color: $main_bg;
   color: $primary;
+}
+
+li {
+  list-style: none;
 }

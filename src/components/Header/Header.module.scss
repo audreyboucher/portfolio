@@ -2,7 +2,21 @@
 
 .container {
   width: 100%;
+  padding: 0 40px;
   background: $header_bg;
+}
+
+.maxWidth {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -11,6 +25,13 @@
   justify-content: center;
   width: 80px;
   height: 80px;
+  margin-right: 20px;
   background: $secondary;
   cursor: pointer;
+
+  & + h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: default;
+  }
 }

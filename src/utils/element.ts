@@ -1,0 +1,1 @@
+export const isIdValid = (id?: string): boolean => !!(id && id.length && document.getElementById(id));

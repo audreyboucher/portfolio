@@ -1,0 +1,89 @@
+@import '../../../../styles/colors';
+// @import '../../../../styles/animations';
+
+.listItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &.hasSubMenu {
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $primary;
+      transition: all .3s linear;
+    }
+
+    &.opened:after {
+      border-top-color: $secondary;
+      transform: rotate(180deg);
+    }
+
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  &.disabled {
+    color: $disabled;
+    cursor: not-allowed;
+
+    &:after {
+      content: 'Coming soon';
+      background-color: $secondary;
+      color: $primary;
+      margin-left: 10px;
+      padding: 2px 10px;
+      border-radius: 5px;
+      font-size: .65em;
+      font-weight: 300;
+    }
+  }
+
+  & + .listItem {
+    padding-left: 25px;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all .3s linear;
+  }
+
+  &:not(.disabled):hover span {
+    color: $secondary;
+  }
+}
+
+.subMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 10px 20px;
+  background-color: $primary;
+  color: $main_bg;
+  text-align: right;
+
+  li {
+    padding: 5px 10px;
+
+    &.disabled {
+      color: $secondary_bg;
+      cursor: not-allowed;
+    }
+
+    &:not(.disabled):hover {
+      color: $secondary;
+    }
+
+    & + li {
+      border-top: 1px solid lighten($disabled, 60%);
+    }
+  }
+}

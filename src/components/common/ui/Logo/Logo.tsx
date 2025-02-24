@@ -11,7 +11,7 @@ export enum Version {
 type Props = {
   version: Version;
   size?: number;
-  onClick?: MouseEventHandler<HTMLDivElement>;
+  onClick?: MouseEventHandler<HTMLElement>;
   containerClassName?: string;
 };
 
