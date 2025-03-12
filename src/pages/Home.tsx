@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+
+import { SummarySection } from '../components';
 
 const Index = () => {
   return (
-    <div>Content</div>
+    <SummarySection />
   );
 };
 

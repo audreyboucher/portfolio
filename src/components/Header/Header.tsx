@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 const Header = () => {
   return (
     <header className={styles.container}>
-      <div className={styles.maxWidth}>
+      <div>
         <aside className={styles.logoContainer}>
           <Logo version={LogoVersion.Dark} containerClassName={styles.logo} />
           <h1>Audrey B.</h1>

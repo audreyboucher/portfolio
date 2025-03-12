@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.listContainer {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: $header_height;
+  overflow: hidden;
+  transition: all 1s linear;
+}
+
+.listItem {
+  display: flex;
+  align-self: flex-start;
+  transform: translate(0, 0);
+
+  &.animate {
+    transform: translate(0, -$header_height);
+    transition: transform 1s linear;
+  }
+}

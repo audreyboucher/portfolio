@@ -1,0 +1,51 @@
+@import '../../../../styles/colors';
+
+.button {
+  position: relative;
+  background: none;
+  cursor: pointer;
+
+  span {
+    position: relative;
+    display: block;
+    padding: 15px 30px;
+    color: $primary;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    transition: all .3s linear;
+  }
+
+  &:before {
+    background-color: $secondary;
+  }
+
+  &:after {
+    border: 1px solid $secondary;
+  }
+
+  &:hover {
+    &:before {
+      top: 5px;
+      bottom: 5px;
+      left: 5px;
+      right: 5px;
+    }
+
+    &:after {
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+    }
+  }
+}
