@@ -1,0 +1,89 @@
+@import '../../../styles/colors';
+
+.container > div {
+  padding: 150px 0;
+}
+
+.carrouselImageContainer {
+  &:after, &:before {
+    font-size: 20px;
+    font-weight: 600;
+    color: $secondary;
+    white-space: pre;
+  }
+
+  &:before {
+    content: 'const display_pics = () => {\A    return [';
+  }
+
+  &:after {
+    content: '    ];\A};';
+  }
+}
+
+.textContainer {
+  max-width: 580px;
+}
+
+.title {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.carrouselTextContainer {
+  margin-top: 40px;
+}
+
+.carrouselText {
+  & + .carrouselText {
+    margin-top: 40px
+  }
+
+  h5 {
+    line-height: 36px;
+    font-size: 36px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+
+    span:first-child {
+      text-transform: capitalize;
+      font-size: 46px;
+    }
+
+    span + span:before {
+      content: ' & ';
+    }
+  }
+
+  &:not(.selected) {
+    cursor: pointer;
+
+    div {
+      display: none;
+    }
+  }
+
+  &.selected h5 {
+    line-height: 72px;
+    font-size: 72px;
+    color: $secondary;
+
+    span:first-child {
+      font-size: 92px;
+    }
+  }
+
+  div {
+    padding-top: 20px;
+  }
+
+  p {
+    font-size: 14px;
+
+    & + p {
+      margin-top: 10px;
+    }
+  }
+}

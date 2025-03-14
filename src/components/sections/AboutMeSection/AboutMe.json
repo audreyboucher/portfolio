@@ -1,0 +1,32 @@
+[
+  {
+    "keywords": ["curiosity", "consistency"],
+    "description": [
+      "As a triathlete, I’m always testing the latest training methods and techs for the sports I enjoy. I’m in a constant search for ways to improve my technique and performances.",
+      "I learnt through endurance sports not to take anything for granted. Fitness is more about consistency than intensity: it takes a long time to build but can vanish in the blink of an eye. I’ve experienced it first hand.",
+      "I believe that being able to question oneself, seek potential solutions, try them out, fail and repeat is key to eventually succeed.",
+      "And I’m willing to do the work."
+    ],
+    "cover": ["triathlon.jpeg"]
+  },
+  {
+    "keywords": ["empathy", "communication"],
+    "description": [
+      "Working with NGOs to protect animals and the environment is an essential part of my life.",
+      "Besides fulfilling my desire to have a positive impact and educate the public on the issues we face as a society, it’s an excellent way for me to improve my communication skills and challenge myself.",
+      "I’m an introvert and engaging conversations with strangers felt like an impossible task to do at first. But, after throwing myself under the bus -and a few awkward moments-, I managed to be more effective with my speech and arguments.",
+      "My new found ability to respond to the person in front of me is enhanced by my more innate listening and empathizing skills. It really is a superpower."
+    ],
+    "cover": ["activism.gif", "activism.jpg"]
+  },
+  {
+    "keywords": ["patience", "attentiveness"],
+    "description": [
+      "Living with a companion animal is a gift as well as a challenge.",
+      "Prior to having my dog Satay in my life, I dreamt of an active lifestyle, running regularly with my dog. But this just isn’t who he is. He’s more of a couch potato.",
+      "If you hear snoring during our One-on-One, that’s him!",
+      "I like to believe that, even though he’s not the dog I dreamt of, he rather is the one I needed in my life. He taught me an important skill I very much lacked: patience."
+    ],
+    "cover": ["dog.jpg"]
+  }
+]

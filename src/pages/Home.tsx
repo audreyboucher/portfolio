@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { SummarySection } from '../components';
+import { SummarySection, AboutMeSection } from '../components/sections';
 
 const Index = () => {
   return (
-    <SummarySection />
+    <>
+      <SummarySection />
+      <AboutMeSection />
+    </>
   );
 };
 

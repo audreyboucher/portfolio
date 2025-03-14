@@ -1,0 +1,20 @@
+@import '../../../styles/colors';
+
+.container {
+  position: relative;
+  padding: 0 40px;
+  overflow: hidden;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1200px;
+    min-height: 100vh;
+  }
+}
+
+.secondaryBgColor {
+  background: $secondary_bg;
+}

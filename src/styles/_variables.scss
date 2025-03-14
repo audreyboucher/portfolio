@@ -1,1 +1,6 @@
 $header_height: 52px;
+$carrousel_duration: 30;
+
+:export {
+  INTERVAL_DURATION: $carrousel_duration;
+}
