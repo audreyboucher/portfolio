@@ -1,9 +1,4 @@
-import HeaderComponent from './Header/Header';
-import FooterComponent from './Footer/Footer';
-import SummarySectionComponent from './SummarySection/SummarySection';
-import TextCarrouselComponent from './TextCarrousel/TextCarrousel';
-
-export const Header = HeaderComponent;
-export const Footer = FooterComponent;
-export const SummarySection = SummarySectionComponent;
-export const TextCarrousel = TextCarrouselComponent;
+export { default as Header } from './Header/Header';
+export { default as Footer } from './Footer/Footer';
+export { default as TextCarrousel } from './TextCarrousel/TextCarrousel';
+export { default as ImageCarrousel, ANIMATION_DURATION } from './ImageCarrousel/ImageCarrousel';

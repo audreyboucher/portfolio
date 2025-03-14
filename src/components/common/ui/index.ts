@@ -1,8 +1,4 @@
-import ButtonComponent from './Button/Button';
-import LogoComponent, { Version } from './Logo/Logo';
-import NavItemComponent from './NavItem/NavItem';
-
-export const Button = ButtonComponent;
-export const Logo = LogoComponent;
-export const LogoVersion = Version;
-export const NavItem = NavItemComponent;
+export { default as Button } from './Button/Button';
+export { default as Logo, Version as LogoVersion } from './Logo/Logo';
+export { default as NavItem } from './NavItem/NavItem';
+export { default as ProgressBar } from './ProgressBar/ProgressBar';
