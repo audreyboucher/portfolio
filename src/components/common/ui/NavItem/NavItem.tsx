@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import useIsVisible from '../../../../hooks/useIsVisible';
 import { scrollToAnchor } from '../../../../utils/scroll';
 
 import styles from './NavItem.module.scss';
@@ -29,28 +28,16 @@ const SubMenu = ({ items }: { items: Item[] }) => {
   );
 };
 
-const NavItem = ({ name, anchor, subMenu, disabled }: Props) => {
-  const { ref, isVisible, setIsVisible } = useIsVisible(false);
-
-  return (
-    <li
-      className={classNames(styles.listItem, {
-        [styles.hasSubMenu]: subMenu,
-        [styles.opened]: subMenu && isVisible,
-        [styles.disabled]: disabled
-      })}
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
-    >
-      <span
-        onClick={() => scrollToAnchor(anchor)}
-        ref={ref}
-      >
-        { name }
-      </span>
-      {subMenu && isVisible && <SubMenu items={subMenu} />}
-    </li>
-  );
-};
+const NavItem = ({ name, anchor, subMenu, disabled }: Props) => (
+  <li
+    className={classNames(styles.listItem, {
+      [styles.hasSubMenu]: subMenu,
+      [styles.disabled]: disabled
+    })}
+  >
+    <span onClick={() => scrollToAnchor(anchor)}>{ name }</span>
+    {subMenu && <SubMenu items={subMenu} />}
+  </li>
+);
 
 export default NavItem;

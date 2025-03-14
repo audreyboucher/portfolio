@@ -1,9 +1,12 @@
 @import '../../styles/colors';
 
 .container {
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 0 40px;
   background: $header_bg;
+  z-index: 100;
 
   & > div {
     display: flex;
@@ -17,6 +20,7 @@
 .logoContainer {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo {

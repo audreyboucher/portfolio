@@ -1,5 +1,4 @@
 @import '../../../../styles/colors';
-// @import '../../../../styles/animations';
 
 .listItem {
   position: relative;
@@ -20,9 +19,16 @@
       transition: all .3s linear;
     }
 
-    &.opened:after {
-      border-top-color: $secondary;
-      transform: rotate(180deg);
+    &:hover {
+      &:after {
+        border-top-color: $secondary;
+        transform: rotate(180deg);
+      }
+
+      .subMenu {
+        padding: 10px 20px;
+        height: auto;
+      }
     }
 
     span {
@@ -65,10 +71,13 @@
   position: absolute;
   top: 100%;
   right: 0;
-  padding: 10px 20px;
+  padding: 0 20px;
+  height: 0;
   background-color: $primary;
   color: $main_bg;
   text-align: right;
+  overflow: hidden;
+  transition: all .3s linear;
 
   li {
     padding: 5px 10px;
