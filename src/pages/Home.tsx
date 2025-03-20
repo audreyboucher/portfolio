@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SummarySection, AboutMeSection, SkillsSection } from '../components/sections';
+import { SummarySection, AboutMeSection, SkillsSection, EducationSection } from '../components/sections';
 
 const Index = () => {
   return (
@@ -8,6 +8,7 @@ const Index = () => {
       <SummarySection />
       <AboutMeSection />
       <SkillsSection />
+      <EducationSection />
     </>
   );
 };

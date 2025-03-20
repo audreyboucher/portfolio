@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Bachelor Multimedia Project Manager",
+    "school": "IESA Multimédia",
+    "description": [
+      "Graphic design, video editing & animation, UX design, marketing and communication skills",
+      "Introduction to front-end & back-end web development",
+      "Team & project management and organization"
+    ],
+    "start": "2012",
+    "end": "2015"
+  },
+  {
+    "name": "Design and development of IT solutions",
+    "school": "42 school",
+    "description": [
+      "Software development",
+      "Adaptation & innovation in digital technologies",
+      "Design & management of information systems",
+      "Management & communication for teams and projects"
+    ],
+    "start": "2015",
+    "end": "2017"
+  }
+]

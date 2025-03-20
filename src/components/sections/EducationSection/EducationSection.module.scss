@@ -1,0 +1,23 @@
+@import '../../../styles/colors';
+
+.container > div {
+  min-height: auto;
+  padding: 100px 0 200px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.title {
+  flex-basis: 100%;
+  margin-bottom: 100px;
+  color: $secondary;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}

@@ -1,0 +1,47 @@
+@import '../../styles/colors';
+
+.container {
+  display: flex;
+  flex-basis: 45%;
+  flex-direction: column;
+
+  p {
+    display: inline-flex;
+    align-self: center;
+    border: 1px solid $secondary;
+    margin-bottom: 30px;
+    padding: 20px;
+    color: $secondary;
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  h6 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  ul {
+    font-size: 14px;
+    font-weight: 200;
+
+    li {
+      display: flex;
+
+      &:before {
+        content: '';
+        flex-shrink: 0;
+        margin: 10px;
+        width: 3px;
+        height: 3px;
+        background: $primary;
+        border-radius: 100%;
+      }
+    }
+  }
+}
