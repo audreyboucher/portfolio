@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { SummarySection, AboutMeSection, SkillsSection, EducationSection } from '../components/sections';
+import {
+  SummarySection,
+  AboutMeSection,
+  SkillsSection,
+  EducationSection,
+  ExperiencesSection
+} from '../components/sections';
 
 const Index = () => {
   return (
@@ -9,6 +15,7 @@ const Index = () => {
       <AboutMeSection />
       <SkillsSection />
       <EducationSection />
+      <ExperiencesSection />
     </>
   );
 };

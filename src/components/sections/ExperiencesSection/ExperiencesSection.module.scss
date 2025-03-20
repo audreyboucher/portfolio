@@ -1,0 +1,41 @@
+@import '../../../styles/colors';
+
+.section {
+  margin: 200px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 100%;
+}
+
+.experiencesContainer {
+  position: relative;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: $secondary;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-bottom: 70px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+}

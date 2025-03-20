@@ -1,0 +1,64 @@
+[
+  {
+    "company": "Le Parisien",
+    "position": "Front-end developer",
+    "description": [
+      "Creation of emailing templates",
+      "Development of event-related UI & features",
+      "Migration from Symfony2 to Symfony3"
+    ],
+    "contractType": "Work/study part-time contract",
+    "location": "Saint-Ouen, France",
+    "start": "2013",
+    "end": "2015",
+    "tools": [
+      "PHP",
+      "Symfony",
+      "SASS",
+      "Trello"
+    ]
+  },
+  {
+    "company": "AB Tasty",
+    "position": "Technical support engineer (Customer support)",
+    "description": [
+      "Customer service",
+      "Popularization of technical terms",
+      "Estimation of the feasibility/duration of a task based on provided specifications",
+      "Technical training of customer advisor teams",
+      "Creation of a command line to save time on team’s repetitive tasks"
+    ],
+    "location": "Paris, France & Madrid, Spain",
+    "start": "2017",
+    "end": "2021",
+    "tools": [
+      "Javascript",
+      "Node",
+      "SASS",
+      "GitLab",
+      "Trello"
+    ]
+  },
+  {
+    "company": "AB Tasty",
+    "position": "React front-end developer",
+    "description": [
+      "Creation of customer interface's modules",
+      "Conducting intra and inter-team code reviews",
+      "Bug fixes",
+      "Unit & e2e testing",
+      "Teamwork using the agile method precepts"
+    ],
+    "location": "Paris & Nantes, France",
+    "start": "2021",
+    "end": "2023",
+    "tools": [
+      "React",
+      "Typescript",
+      "Cypress",
+      "Figma",
+      "GitLab",
+      "JIRA"
+    ]
+  }
+]

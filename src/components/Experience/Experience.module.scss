@@ -1,0 +1,154 @@
+@import '../../styles/colors';
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($secondary, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba($secondary, 0);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & + .container {
+    margin-top: 50px;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .tools {
+      justify-content: flex-end;
+
+      &:before {
+        left: auto;
+        right: -60px;
+      }
+    }
+  }
+
+  & > * {
+    flex-basis: 50%;
+    margin: 0 50px;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+
+  & > * + * {
+    margin-top: 10px;
+  }
+
+  div {
+    display: flex;
+    font-size: 24px;
+
+    p {
+      color: $secondary;
+      font-weight: 600;
+    }
+
+    h6 {
+      margin-left: 30px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  h5 {
+    font-size: 28px;
+    font-weight: 200;
+  }
+
+  ul {
+    font-size: 16px;
+    font-weight: 200;
+
+    li {
+      display: flex;
+
+      &:before {
+        content: '';
+        flex-shrink: 0;
+        margin: 12px 10px;
+        width: 5px;
+        height: 5px;
+        background: $primary;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  & > p {
+    font-size: 16px;
+
+    &:last-child {
+      font-weight: 200;
+      opacity: .7;
+    }
+  }
+}
+
+.tools {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    left: -60px;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background: $secondary;
+    border-radius: 100%;
+    animation: pulse 2s infinite;
+  }
+
+  li + li {
+    margin-left: 20px;
+  }
+
+  figure {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: help;
+
+    &:hover figcaption {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  img {
+    height: 30px;
+  }
+
+  figcaption {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 5px auto 0;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background: darken($primary, 10%);
+    color: $secondary_bg;
+    font-size: 10px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity .5s linear;
+  }
+}
