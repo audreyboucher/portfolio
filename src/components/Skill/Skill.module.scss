@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-basis: 33%;
+  justify-content: center;
+  align-items: center;
+
+  &:nth-child(n+4) {
+    margin-top: 40px;
+  }
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  & > p {
+    font-size: 14px;
+
+    & + * {
+      margin-top: 5px;
+    }
+  }
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 30px;
+  height: 30px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

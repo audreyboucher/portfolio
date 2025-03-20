@@ -1,19 +1,19 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, RefObject } from 'react';
 
-const useIsVisible = (initialVisibility: boolean) => {
-  const [isVisible, setIsVisible] = useState(initialVisibility);
-  const ref = useRef<null | HTMLElement>(null);
-
-  const handleClickOutside = ({ target }: MouseEvent) => {
-    if (!ref.current?.contains(target as Node)) setIsVisible(false);
-  };
+const useIsVisible = (ref: RefObject<HTMLElement | null>) => {
+  const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
-    return () => { document.removeEventListener('click', handleClickOutside, true); };
-  }, []);
+    if (!ref || !ref.current) return;
 
-  return { ref, isVisible, setIsVisible };
-};
+    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
+
+    observer.observe(ref.current);
+
+    return () => { observer.disconnect(); };
+  }, [ref]);
+
+  return isIntersecting;
+}
 
 export default useIsVisible;

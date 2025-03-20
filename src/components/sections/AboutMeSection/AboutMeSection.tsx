@@ -64,7 +64,7 @@ const AboutMeSection = () => {
 
         <article className={styles.textContainer}>
           <h4 className={styles.title}>About me</h4>
-          <ProgressBar value={progress} />
+          <ProgressBar value={progress} animationDuration={parseInt(INTERVAL_DURATION)} />
           <ul className={styles.carrouselTextContainer}>
             {slides.map(({ keywords, description }: Slide, index) => (
               <li

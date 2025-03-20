@@ -1,0 +1,80 @@
+{
+  "technologies": [
+    {
+      "name": "HTML",
+      "value": 100
+    },
+    {
+      "name": "CSS",
+      "value": 100
+    },
+    {
+      "name": "SASS",
+      "value": 80,
+      "info": "I tend to prefer CSS over Javascript to handle styles everywhere I can, including for animations and transitions. It’s faster, smoother and more performant but it lacks a lot of features that are fortunately provided by SASS. From variables to mixins and everything in between, it makes my styles more scalable and easier to read and update."
+    },
+    {
+      "name": "Javascript",
+      "value": 85,
+      "info": "This is my favorite language. I love how I’m able to do everything I set my mind to quite easily and its syntax and semantics makes my code very expressive and declarative. I’ve been working with JS and JS frameworks for years now and I keep on learning new features all the time! I really enjoy diving deep into it."
+    },
+    {
+      "name": "React",
+      "value": 80,
+      "info": "This is my favorite framework and the one I’m more experienced in working with. I love its functional components-based approach, the usage of hooks - both built-in and homemade - and its virtual DOM that’s definitely a game changer! This website has been created with it and its code is available <a href=\"https://github.com/audreyboucher/portfolio\">here</a>."
+    },
+    {
+      "name": "Vue",
+      "value": 70,
+      "info": "Even though I’m less experienced in working with Vue, learning React helped me greatly in learning Vue afterwards. They're similar in many ways, which eases the transition from one to another, but I find Vue and its Composition API very promising and interesting."
+    },
+    {
+      "name": "Typescript",
+      "value": 85,
+      "info": "Types are the one thing really lacking in Javascript and I’m glad there’s Typescript to make up for it. It revolutionized the way I code and debug my code. I love how it makes it clear what a component/function is looking for (as a prop or argument for example) and how easier it is to find where some mistakes come from. It has become essential to me."
+    },
+    {
+      "name": "Cypress",
+      "value": 60,
+      "info": "Unit testing is essential and very powerful but, to test an app/worflow as a whole, end-to-end testing is required and Cypress is a great tool for it. I was introduced to it while working for AB Tasty and loved it! It allows to easily track and monitor the test coverage of the UI, prevent regressions and ensure that critical flows are tested."
+    }
+  ],
+  "apps": [
+    {
+      "name": "Figma",
+      "value": 80,
+      "info": "I’ve previously been working with Photoshop, Xd or Sketch for mockups and different projects but Figma definitely stands out, at least for web design. It’s visibly made for both designers and developers and I really appreciate it. This website mockup has been created using it and it’s available <a href=\"https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio\">here</a>."
+    },
+    {
+      "name": "Photoshop",
+      "value": 70
+    },
+    {
+      "name": "Illustrator",
+      "value": 60
+    },
+    {
+      "name": "Xd",
+      "value": 70
+    },
+    {
+      "name": "GitHub",
+      "value": 70
+    },
+    {
+      "name": "GitLab",
+      "value": 75,
+      "info": "I first was introduced to GitLab and its CI pipeline while working for AB Tasty. It’s an efficient and intuitive tool for continuous integration and delivery that I really enjoy working with."
+    },
+    {
+      "name": "PostgreSQL",
+      "value": 70,
+      "info": "I recently was introduced to PostgreSQL but was already familiar with SQL requests prior. Its robust set of features is perfect for complex queries and makes it enjoyable to work with."
+    },
+    {
+      "name": "JIRA",
+      "value": 70,
+      "info": "It’s the perfect tool for bug tracking and agile project management. I’ve worked with it on many projects with very different organization styles and the least we can say is that it delivers!"
+    }
+  ]
+}

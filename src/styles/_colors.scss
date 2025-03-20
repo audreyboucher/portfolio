@@ -6,9 +6,47 @@ $main_bg: #0A0B12;
 $secondary_bg: #11131D;
 
 $disabled: #434449;
+$additional_info: #B7B6B8;
+
+$html: #F16524;
+$css: #6F2FA0;
+$sass: #CE679A;
+$javascript: #F0DC4E;
+$react: #0CF;
+$vue: #3FB984;
+$typescript: #2D79C7;
+$cypress: #44C194;
+
+$figma: #A259FF;
+$photoshop: #31A8FF;
+$illustrator: #FF9A00;
+$xd: #EF5CE7;
+$github: #FFF;
+$gitlab: #E24329;
+$postgresql: #336791;
+$jira: #0357D1;
 
 :export {
+  default: $secondary;
+
   logo_dark: $main_bg;
   logo_light: $primary;
   logo_primary: $secondary;
+
+  skill_html: $html;
+  skill_css: $css;
+  skill_sass: $sass;
+  skill_javascript: $javascript;
+  skill_react: $react;
+  skill_vue: $vue;
+  skill_typescript: $typescript;
+  skill_cypress: $cypress;
+  skill_figma: $figma;
+  skill_photoshop: $photoshop;
+  skill_illustrator: $illustrator;
+  skill_xd: $xd;
+  skill_github: $github;
+  skill_gitlab: $gitlab;
+  skill_postgresql: $postgresql;
+  skill_jira: $jira;
 }

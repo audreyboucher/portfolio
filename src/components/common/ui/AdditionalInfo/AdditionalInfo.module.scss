@@ -1,0 +1,47 @@
+@import '../../../../styles/colors';
+
+.container {
+  position: relative;
+}
+
+.mouveOverZone {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  cursor: help;
+}
+
+.questionMark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  color: $additional_info;
+  font-size: 10px;
+  border: 1px solid $additional_info;
+  border-radius: 100%;
+}
+
+.infoBox {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  width: 250px;
+  background: darken($primary, 10%);
+  color: $secondary_bg;
+  font-size: 10px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: visibility 0s, opacity .5s linear;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
