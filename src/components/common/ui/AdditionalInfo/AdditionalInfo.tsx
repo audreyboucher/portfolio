@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useMouseMove, useValue, animate } from 'react-ui-animate';
+import parse from 'html-react-parser';
 import classNames from 'classnames';
 
 import styles from './AdditionalInfo.module.scss';
@@ -12,31 +13,27 @@ type Props = {
 };
 
 const AdditionalInfo = ({ text, containerClassName, questionMarkClassName, infoBoxClassName }: Props) => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const x = useValue(ref.current ? ref.current.getBoundingClientRect().left : 0);
-  const y = useValue(ref.current ? ref.current.getBoundingClientRect().top : 0);
+  const getPosition = (axis: 'top' | 'left'): number => ref.current?.getBoundingClientRect()[axis] || 0;
+
+  const x = useValue(getPosition('left'));
+  const y = useValue(getPosition('top'));
 
   useMouseMove(({ mouseX, mouseY }) => {
-    x.value = mouseX - ref.current!.getBoundingClientRect().left;
-    y.value = mouseY - ref.current!.getBoundingClientRect().top;
+    x.value = mouseX - getPosition('left');
+    y.value = mouseY - getPosition('top');
   });
 
   return (
     <div className={classNames(styles.container, containerClassName)}>
-      <div
-        className={styles.mouveOverZone}
-        onMouseOver={() => setIsVisible(true)}
-        onMouseLeave={() => setIsVisible(false)}
-        ref={ref}
-      ></div>
+      <div className={styles.mouseOverZone} ref={ref}></div>
       <span className={classNames(styles.questionMark, questionMarkClassName)}>?</span>
       <animate.div
-        className={classNames(styles.infoBox, infoBoxClassName, { [styles.visible]: isVisible })}
+        className={classNames(styles.infoBox, infoBoxClassName)}
         style={{ translateX: x.value, translateY: y.value }}
       >
-        { text }
+        { parse(text) }
       </animate.div>
     </div>
   );

@@ -27,7 +27,7 @@ const SkillsSection = () => {
   const { technologies, apps } = SKILLS_JSON as Record<string, SkillType[]>;
 
   return (
-    <Section anchor="skills" background="secondary">
+    <Section anchor="skills" background="secondary" containerClassName={styles.section}>
       <div ref={ref} className={styles.container}>
         <h4 className={styles.title}>Technologies <span>&&</span> apps/tools</h4>
 

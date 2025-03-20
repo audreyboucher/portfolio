@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.5.1",
+    "html-react-parser": "^5.2.2",
     "normalize-scss": "^8.0.0",
     "postcss-normalize": "^13.0.1",
     "react": "^19.0.0",

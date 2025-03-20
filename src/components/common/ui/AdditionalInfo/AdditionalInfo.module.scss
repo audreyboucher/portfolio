@@ -4,13 +4,18 @@
   position: relative;
 }
 
-.mouveOverZone {
+.mouseOverZone {
   position: absolute;
   top: -10px;
   bottom: -10px;
   left: -10px;
   right: -10px;
   cursor: help;
+
+  &:hover ~ .infoBox {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .questionMark {
@@ -28,7 +33,9 @@
 .infoBox {
   position: absolute;
   top: 100%;
-  left: 100%;
+  left: -250px;
+  right: -250px;
+  margin: auto;
   border-radius: 5px;
   padding: 15px;
   width: 250px;
@@ -40,8 +47,12 @@
   z-index: 1;
   transition: visibility 0s, opacity .5s linear;
 
-  &.visible {
+  &:hover {
     visibility: visible;
     opacity: 1;
+  }
+
+  a {
+    color: $secondary;
   }
 }
