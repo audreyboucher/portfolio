@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+
+  & > div {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+.title {
+  text-shadow: -1px 0 $primary, 0 1px $primary, 1px 0 $primary, 0 -1px $primary;
+  color: $main_bg;
+  font-size: 200px;
+}
+
+.subtitle {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.paragraph {
+  margin-bottom: 100px;
+  color: darken($primary, 20%);
+  font-size: 20px;
+}
