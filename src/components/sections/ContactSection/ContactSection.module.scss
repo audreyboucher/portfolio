@@ -1,13 +1,27 @@
 @import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.section {
+  padding: 100px 20px;
+}
 
 .container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
 
   & > * {
     flex: 1 0 45%;
     max-width: 45%;
+  }
+
+  form + * {
+    height: auto !important;
+  }
+
+  iframe {
+    min-height: 950px;
   }
 }
 
@@ -30,7 +44,28 @@
   align-items: flex-end;
   width: 100%;
 
-  & > * + * {
-    margin-left: 20px;
+  & > *  {
+    flex: 1 0 calc(50% - 20px);
+    width: calc(50% - 20px);
+
+    & + * {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_nav_max_width) {
+  .container {
+    flex-direction: column;
+    justify-content: stretch;
+
+    & > * {
+      flex: 1 0 100%;
+      max-width: 100%;
+
+      & + * {
+        margin-top: 100px;
+      }
+    }
   }
 }

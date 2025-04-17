@@ -134,7 +134,7 @@ const ContactSection = () => {
   }, [success]);
 
   return (
-    <Section anchor="contact" background="secondary">
+    <Section anchor="contact" background="secondary" containerClassName={styles.section}>
       <div className={styles.container}>
         <form onSubmit={submitForm}>
           <h4 className={styles.title}>Contact</h4>
