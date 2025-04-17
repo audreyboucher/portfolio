@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/variables';
 
 .container > div {
   padding: 150px 0;
@@ -39,6 +40,21 @@
 .carrouselText {
   & + .carrouselText {
     margin-top: 40px
+  }
+
+  figure {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: -1000px;
+      bottom: -1000px;
+      margin: auto;
+      width: 100%;
+    }
   }
 
   h5 {
@@ -85,6 +101,104 @@
 
     & + p {
       margin-top: 10px;
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0;
+
+  .dot {
+    position: relative;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background: rgba($secondary, .5);
+    cursor: pointer;
+
+    &.selected {
+      background: $secondary;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+        border: 1px solid $secondary;
+        border-radius: 100%;
+      }
+    }
+
+    & + .dot {
+      margin-left: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$desktop_max_width + 1}) {
+  .mobileOnly {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $desktop_max_width) {
+  .desktopOnly {
+    display: none;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .textContainer {
+    width: 100%;
+    max-width: none;
+  }
+
+  .carrouselTextContainer {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+  }
+
+  .carrouselText {
+    position: absolute;
+    left: -100vw;
+    width: 100%;
+    background: $secondary_bg;
+    transition: left .5s linear;
+
+    &.selected {
+      left: 0;
+
+      & ~ .carrouselText {
+        left: 100vw;
+      }
+    }
+
+    &:not(.selected) div {
+      display: block;
+    }
+
+    h5 {
+      margin-top: 70px;
+      line-height: 36px !important;
+      font-size: 36px !important;
+      color: $secondary;
+
+      span:first-child {
+        text-transform: capitalize;
+        font-size: 46px !important;
+      }
+    }
+
+    & + .carrouselText {
+      margin: 0;
     }
   }
 }
