@@ -4,3 +4,4 @@ export { default as NavItem } from './NavItem/NavItem';
 export { default as ProgressBar } from './ProgressBar/ProgressBar';
 export { default as AdditionalInfo } from './AdditionalInfo/AdditionalInfo';
 export { default as Separator } from './Separator/Separator';
+export { default as Input } from './Input/Input';

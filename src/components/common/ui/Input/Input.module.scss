@@ -1,0 +1,75 @@
+@import '../../../../styles/colors';
+
+.inputContainer,
+.textareaContainer {
+  position: relative;
+  margin-bottom: 20px;
+
+  label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: all .3s linear;
+  }
+
+  input, textarea {
+    width: 100%;
+    border: 1px solid $primary;
+    padding: 10px 20px;
+    background: none;
+    color: $primary;
+  }
+
+  textarea {
+    height: 150px;
+    resize: none;
+  }
+
+  &.error {
+    position: relative;
+    margin-top: 30px;
+
+    label {
+      color: $error;
+    }
+
+    input, textarea {
+      border-color: $error;
+      color: $error;
+    }
+  }
+
+  &.disabled {
+    label {
+      color: $disabled;
+    }
+
+    input, textarea {
+      border-color: $disabled;
+      color: $disabled;
+    }
+  }
+}
+
+.inputContainer.focus {
+  .errorMessage + label {
+    display: none;
+  }
+
+  label {
+    top: -30px;
+    left: 0;
+  }
+}
+
+.textareaContainer.focus label {
+  display: none;
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 10px;
+  color: $error;
+  font-size: 12px;
+}

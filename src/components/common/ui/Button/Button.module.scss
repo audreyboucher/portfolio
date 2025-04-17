@@ -48,4 +48,20 @@
       right: -5px;
     }
   }
+
+  &[disabled] {
+    pointer-events: none;
+
+    span {
+      color: $secondary_bg;
+    }
+
+    &:before {
+      background-color: $disabled;
+    }
+
+    &:after {
+      border-color: $disabled
+    }
+  }
 }

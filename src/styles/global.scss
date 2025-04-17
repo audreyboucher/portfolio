@@ -13,6 +13,7 @@
 html, body {
   background-color: $main_bg;
   color: $primary;
+  overflow-x: hidden;
 }
 
 li {

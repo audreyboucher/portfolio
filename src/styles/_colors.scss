@@ -8,6 +8,9 @@ $secondary_bg: #11131D;
 $disabled: #434449;
 $additional_info: #B7B6B8;
 
+$error: #FF5252;
+$success: #4CAF50;
+
 $html: #F16524;
 $css: #6F2FA0;
 $sass: #CE679A;
@@ -15,6 +18,7 @@ $javascript: #F0DC4E;
 $react: #0CF;
 $vue: #3FB984;
 $typescript: #2D79C7;
+$django: #34A77B;
 $cypress: #44C194;
 
 $figma: #A259FF;
@@ -40,6 +44,7 @@ $jira: #0357D1;
   skill_react: $react;
   skill_vue: $vue;
   skill_typescript: $typescript;
+  skill_django: $django;
   skill_cypress: $cypress;
   skill_figma: $figma;
   skill_photoshop: $photoshop;
@@ -49,4 +54,8 @@ $jira: #0357D1;
   skill_gitlab: $gitlab;
   skill_postgresql: $postgresql;
   skill_jira: $jira;
+
+  calendly_background: $main_bg;
+  calendly_primary_color: $secondary;
+  calendly_text: $primary;
 }
