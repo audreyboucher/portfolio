@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Button } from '../../common/ui';
 import { TextCarrousel, SourceLink } from '../..';
@@ -35,7 +36,7 @@ const SummarySection = () => {
           <img src={require('./images/profile_picture.jpg')} alt="Audrey Boucher" />
         </figure>
 
-        <div className={styles.linksContainer}>
+        <div className={classNames(styles.linksContainer, styles.desktopOnly)}>
           { source_links.map((props, index) => <SourceLink {...props} key={index} />) }
         </div>
       </>
