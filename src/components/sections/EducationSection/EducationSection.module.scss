@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/variables';
 
 .container > div {
   min-height: auto;
@@ -20,4 +21,14 @@
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: $mobile_nav_max_width) {
+  .contentContainer {
+    flex-direction: column;
+
+    article + article {
+      margin-top: 70px;
+    }
+  }
 }
