@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import Section from '../Section/Section';
 import { Experience, ExperienceType } from '../..';
@@ -18,7 +19,7 @@ const ExperiencesSection = () => {
 
         <div className={styles.experiencesContainer}>
           { experiences.map((props, index) => <Experience key={index} {...props} />) }
-          <Separator direction="vertical" containerClassName={styles.line} />
+          <Separator direction="vertical" containerClassName={classNames(styles.line, styles.desktopOnly)} />
         </div>
       </div>
     </Section>

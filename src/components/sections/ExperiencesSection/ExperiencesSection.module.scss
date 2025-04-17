@@ -1,7 +1,9 @@
 @import '../../../styles/colors';
+@import '../../../styles/variables';
 
 .section {
   margin: 200px 0;
+  overflow: visible;
 }
 
 .container {
@@ -38,4 +40,10 @@
   right: 0;
   margin: auto;
   height: 100%;
+}
+
+@media screen and (max-width: $mobile_nav_max_width) {
+  .desktopOnly {
+    display: none;
+  }
 }
