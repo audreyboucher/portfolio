@@ -19,3 +19,9 @@
     transition: transform 1s linear;
   }
 }
+
+@media screen and (max-width: $desktop_max_width) {
+  .listContainer {
+    display: flex;
+  }
+}
