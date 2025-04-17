@@ -33,7 +33,7 @@ const SkillsSection = () => {
 
         <SkillList list={technologies} launchAnimation={targetElementVisible} />
 
-        <Separator direction="vertical" />
+        <Separator direction="vertical" containerClassName={styles.desktopOnly} />
 
         <SkillList list={apps} launchAnimation={targetElementVisible} />
       </div>
