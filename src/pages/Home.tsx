@@ -5,17 +5,22 @@ import {
   AboutMeSection,
   SkillsSection,
   EducationSection,
-  ExperiencesSection
+  ExperiencesSection,
+  ContactSection
 } from '../components/sections';
+import { Header, Footer } from '../components';
 
 const Index = () => {
   return (
     <>
+      <Header />
       <SummarySection />
       <AboutMeSection />
       <SkillsSection />
       <EducationSection />
       <ExperiencesSection />
+      <ContactSection />
+      <Footer />
     </>
   );
 };

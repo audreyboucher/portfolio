@@ -1,0 +1,12 @@
+[
+  {
+    "text": "See this website's code on GitHub",
+    "icon": "code",
+    "link": "https://github.com/audreyboucher/portfolio"
+  },
+  {
+    "text": "See this website's mockups on Figma",
+    "icon": "image",
+    "link": "https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio"
+  }
+]

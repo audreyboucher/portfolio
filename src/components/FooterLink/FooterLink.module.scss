@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+
+.container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &.nonClickable {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background: $secondary;
+
+    img {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  & > div {
+    margin-left: 20px;
+    color: $primary;
+
+    h6 {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: .7;
+
+      &.callToAction:after {
+        content: ' >';
+      }
+    }
+  }
+}

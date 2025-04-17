@@ -83,3 +83,11 @@
   color: $secondary;
   font-weight: 700;
 }
+
+.linksContainer {
+  display: block;
+  position: fixed;
+  top: 250px;
+  right: 0;
+  height: 120px;
+}

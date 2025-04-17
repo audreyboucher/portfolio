@@ -1,0 +1,22 @@
+[
+  {
+    "name": "LinkedIn",
+    "detail": "Go to profile",
+    "url": "https://www.linkedin.com/in/audrey-boucher-43247159/",
+    "callToAction": true
+  },
+  {
+    "name": "Location",
+    "detail": "44300 Nantes, France"
+  },
+  {
+    "name": "Phone",
+    "detail": "+33 (0)6 23 16 19 06",
+    "url": "tel:+33623161906"
+  },
+  {
+    "name": "Email",
+    "detail": "audreyboucher95@gmail.com",
+    "url": "mailto:audreyboucher95@gmail.com"
+  }
+]

@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { useMouseMove, useValue, animate } from 'react-ui-animate';
-import parse from 'html-react-parser';
 import classNames from 'classnames';
 
 import styles from './AdditionalInfo.module.scss';
@@ -33,7 +32,7 @@ const AdditionalInfo = ({ text, containerClassName, questionMarkClassName, infoB
         className={classNames(styles.infoBox, infoBoxClassName)}
         style={{ translateX: x.value, translateY: y.value }}
       >
-        { parse(text) }
+        { text }
       </animate.div>
     </div>
   );
