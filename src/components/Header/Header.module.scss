@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/variables';
 
 .container {
   position: fixed;
@@ -13,7 +14,7 @@
     align-items: stretch;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: $desktop_max_width;
   }
 }
 
@@ -27,9 +28,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
   margin-right: 20px;
+  width: $header_container_height;
+  height: $header_container_height;
   background: $secondary;
   cursor: pointer;
 
@@ -37,5 +38,21 @@
     text-transform: uppercase;
     font-weight: 600;
     cursor: default;
+  }
+}
+
+@media screen and (max-width: $mobile_nav_max_width) {
+  .container {
+    padding: 10px 20px;
+
+    & > div {
+      align-items: center;
+    }
+  }
+
+  .logo {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
   }
 }

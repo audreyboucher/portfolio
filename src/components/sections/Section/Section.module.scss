@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/variables';
 
 .container {
   position: relative;
@@ -10,7 +11,7 @@
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    max-width: 1200px;
+    max-width: $desktop_max_width;
     min-height: 100vh;
   }
 }

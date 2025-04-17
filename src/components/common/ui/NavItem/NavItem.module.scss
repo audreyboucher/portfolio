@@ -1,4 +1,5 @@
 @import '../../../../styles/colors';
+@import '../../../../styles/variables';
 
 .listItem {
   position: relative;
@@ -40,11 +41,14 @@
     color: $disabled;
     cursor: not-allowed;
 
+    span {
+      margin-right: 10px;
+    }
+
     &:after {
       content: 'Coming soon';
       background-color: $secondary;
       color: $primary;
-      margin-left: 10px;
       padding: 2px 10px;
       border-radius: 5px;
       font-size: .65em;
@@ -94,5 +98,68 @@
     & + li {
       border-top: 1px solid lighten($disabled, 60%);
     }
+  }
+}
+
+@media screen and (max-width: $mobile_nav_max_width) {
+  .listItem {
+    height: auto;
+    font-size: 20px;
+
+    & + .listItem {
+      padding-top: 30px;
+      padding-left: 0;
+    }
+  }
+
+  .hasSubMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:after {
+      display: none;
+    }
+
+    span:after {
+      content: '';
+      margin-left: 10px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $primary;
+      transition: all .3s linear;
+    }
+
+    &:hover span:after {
+      border-top-color: $secondary;
+    }
+  }
+
+  .subMenu {
+    position: relative;
+    top: auto;
+    right: auto;
+    padding: 0 0 0 30px !important;
+    height: auto;
+    background: none;
+    color: $primary;
+    text-align: left;
+
+    li {
+      text-transform: uppercase;
+      margin-top: 30px;
+
+      & + li {
+        border: none;
+      }
+    }
+  }
+
+  .disabled {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
