@@ -100,6 +100,7 @@
 .tools {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   position: relative;
 
   &:before {
@@ -116,8 +117,9 @@
     animation: pulse 2s infinite;
   }
 
-  li + li {
-    margin-left: 20px;
+  li {
+    margin-top: 20px;
+    margin-right: 20px;
   }
 
   figure {
@@ -165,7 +167,7 @@
     flex-direction: column !important;
     align-items: flex-start;
     position: relative;
-    padding: 50px 30px;
+    padding: 50px 0;
 
     .tools {
       position: static;
@@ -215,8 +217,17 @@
   }
 
   .details {
-    div h6 {
-      font-size: 22px;
+    div {
+      display: flex;
+      align-items: center;
+
+      h6 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
 
     h5 {

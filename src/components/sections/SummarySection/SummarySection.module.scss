@@ -113,6 +113,8 @@
   }
 
   .imageContainer {
+    margin-top: 100px;
+
     img {
       width: 200px;
       height: 200px;
@@ -120,6 +122,12 @@
 
     &:before, &:after {
       font-size: 64px;
+    }
+  }
+
+  .textContainer {
+    h2, h3 {
+      font-size: 40px;
     }
   }
 }
