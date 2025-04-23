@@ -5,6 +5,8 @@ import Section from '../Section/Section';
 import { ImageCarrousel, ANIMATION_DURATION } from '../..';
 import { ProgressBar } from '../../common/ui';
 
+import useSwipe from '../../../hooks/useSwipe';
+
 import slides from './AboutMe.json';
 import styles from './AboutMeSection.module.scss';
 import variables from '../../../styles/_variables.scss';
@@ -32,11 +34,16 @@ const AboutMeSection = () => {
     }
   };
 
+  const onSelectNext = () => onSelectAction(selectedItem === slides.length - 1 ? 0 : selectedItem + 1);
+  const onSelectPrevious = () => onSelectAction(selectedItem === 0 ? slides.length - 1 : selectedItem - 1);
+
+  const swipeHandlers = useSwipe({
+    onSwipedLeft: onSelectPrevious,
+    onSwipedRight: onSelectNext
+  });
+
   useEffect(() => {
-    const id = setInterval(() => {
-      onSelectAction(selectedItem === slides.length - 1 ? 0 : selectedItem + 1);
-    }, PARSED_INTERVAL_DURATION);
-  
+    const id = setInterval(onSelectNext, PARSED_INTERVAL_DURATION);
     return () => clearInterval(id);
   });
 
@@ -76,7 +83,7 @@ const AboutMeSection = () => {
               )
             }
           </ul>
-          <ul className={styles.carrouselTextContainer}>
+          <ul className={styles.carrouselTextContainer} {...swipeHandlers}>
             {slides.map(({ keywords, description, cover }: Slide, index) => (
               <li
                 className={classNames(styles.carrouselText, { [styles.selected]: index === selectedItem })}
