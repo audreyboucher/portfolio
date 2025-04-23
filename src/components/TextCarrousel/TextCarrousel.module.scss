@@ -5,6 +5,7 @@
   flex-direction: column;
   flex: 1 1 auto;
   height: $header_height;
+  line-height: $header_height;
   overflow: hidden;
   transition: all 1s linear;
 }
