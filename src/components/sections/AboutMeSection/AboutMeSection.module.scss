@@ -42,6 +42,10 @@
     margin-top: 40px
   }
 
+  &:nth-child(2) figure img {
+    top: -750px;
+  }
+
   figure {
     position: relative;
     width: 100%;

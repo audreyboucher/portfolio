@@ -38,8 +38,8 @@ const AboutMeSection = () => {
   const onSelectPrevious = () => onSelectAction(selectedItem === 0 ? slides.length - 1 : selectedItem - 1);
 
   const swipeHandlers = useSwipe({
-    onSwipedLeft: onSelectPrevious,
-    onSwipedRight: onSelectNext
+    onSwipedLeft: onSelectNext,
+    onSwipedRight: onSelectPrevious
   });
 
   useEffect(() => {
