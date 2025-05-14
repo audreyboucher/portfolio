@@ -9,10 +9,12 @@ import {
   ContactSection
 } from '../components/sections';
 import { Header, Footer } from '../components';
+import { Loader } from '../components/common/ui';
 
 const Index = () => {
   return (
     <>
+      <Loader />
       <Header />
       <SummarySection />
       <AboutMeSection />

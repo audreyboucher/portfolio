@@ -1,0 +1,30 @@
+@import '../../../../styles/colors';
+
+@keyframes run {
+  0% { cx: 20px; }
+  50% { cx: 470px; }
+  100% { cx: 20px; }
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $main_bg;
+  z-index: 500;
+}
+
+.svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  font-weight: 800;
+}
+
+.circle {
+  animation: run 5s ease-in-out infinite;
+}
