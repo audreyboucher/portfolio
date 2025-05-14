@@ -18,49 +18,53 @@ export type ExperienceType = {
 
 type Props = ExperienceType & { containerClassName?: string; };
 
-const Experience = ({ company, position, description, contractType, location, start, end, tools, containerClassName }: Props) => (
-  <article className={classNames(styles.container, containerClassName)}>
-    <div className={styles.details}>
-      <div>
-        <p>{ start + (end ? `-${ end }` : null) }</p>
-        <h6>{ company }</h6>
+const Experience = ({ company, position, description, contractType, location, start, end, tools, containerClassName }: Props) => {
+  const keyBase = `${ company.toLowerCase().replace(' ', '_') }-${ position.toLowerCase().replace(' ', '_') }`;
+
+  return (
+    <article className={classNames(styles.container, containerClassName)}>
+      <div className={styles.details}>
+        <div>
+          <p>{ start + (end ? `-${ end }` : null) }</p>
+          <h6>{ company }</h6>
+        </div>
+
+        <h5>{ position }</h5>
+
+        <ul>
+          {
+            description.map((el, index) =>
+              <li key={`${ keyBase }-details-${ index }`}>{ el }</li>
+            )
+          }
+        </ul>
+
+        <p>{ contractType }</p>
+        <p>{ location }</p>
       </div>
 
-      <h5>{ position }</h5>
-
-      <ul>
+      <ul className={styles.tools}>
         {
-          description.map((el, index) =>
-            <li key={`${ company.toLowerCase().replace(' ', '_') }-${ position.toLowerCase().replace(' ', '_') }-${ index }`}>{ el }</li>
+          tools.map((el, index) =>
+            <li key={`${ keyBase }-tools-${ index }`}>
+              <figure>
+                <img src={require(`./images/${ el.toLowerCase() }.svg`)} alt={el} />
+                <figcaption>{ el }</figcaption>
+              </figure>
+            </li>
           )
         }
       </ul>
 
-      <p>{ contractType }</p>
-      <p>{ location }</p>
-    </div>
-
-    <ul className={styles.tools}>
-      {
-        tools.map((el) =>
-          <li key={`${ company.toLowerCase().replace(' ', '_') }-${ position.toLowerCase().replace(' ', '_') }`}>
-            <figure>
-              <img src={require(`./images/${ el.toLowerCase() }.svg`)} alt={el} />
-              <figcaption>{ el }</figcaption>
-            </figure>
-          </li>
-        )
-      }
-    </ul>
-
-    <div className={classNames(styles.lines, styles.mobileOnly)}>
-      <Separator direction="vertical" containerClassName={styles.firstLine} />
-      <Separator direction="horizontal" containerClassName={styles.topLine} />
-      <Separator direction="vertical" containerClassName={styles.sideLine} />
-      <Separator direction="horizontal" containerClassName={styles.bottomLine} />
-      <Separator direction="vertical" containerClassName={styles.lastLine} />
-    </div>
-  </article>
-);
+      <div className={classNames(styles.lines, styles.mobileOnly)}>
+        <Separator direction="vertical" containerClassName={styles.firstLine} />
+        <Separator direction="horizontal" containerClassName={styles.topLine} />
+        <Separator direction="vertical" containerClassName={styles.sideLine} />
+        <Separator direction="horizontal" containerClassName={styles.bottomLine} />
+        <Separator direction="vertical" containerClassName={styles.lastLine} />
+      </div>
+    </article>
+  );
+};
 
 export default Experience;
