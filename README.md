@@ -14,7 +14,6 @@ This is an unfinished project and here is still a lot of work to do:
 
 ### On the front side
 
-- Add a loading state
 - Create a success message on sending a message
 - Handle errors coming from the backend server
 - Create dynamic emailings
