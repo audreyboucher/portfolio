@@ -1,9 +1,8 @@
-@import '../../../styles/colors';
-@import '../../../styles/variables';
+@use '@/styles/breakpoints' as *;
 
 .container {
   position: relative;
-  padding: 0 40px;
+  padding: 0 $section_padding;
   overflow: hidden;
 
   & > div {
@@ -17,5 +16,5 @@
 }
 
 .secondaryBgColor {
-  background: $secondary_bg;
+  background: var(--background-secondary);
 }

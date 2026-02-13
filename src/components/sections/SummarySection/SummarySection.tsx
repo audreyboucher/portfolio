@@ -1,47 +1,61 @@
-import React from 'react';
-import classNames from 'classnames';
+import type { FC } from 'react'
+import { useTranslation, Trans } from 'react-i18next'
+import classNames from 'classnames'
 
-import { Button } from '../../common/ui';
-import { TextCarrousel, SourceLink } from '../..';
-import Section from '../Section/Section';
+import { useImage, type ImageModule } from '@/hooks/useImage'
 
-import type { SourceLinkType } from '../..';
+import { TextCarousel, SourceLink, Section, SOURCE_LINKS, type SourceLinkType } from '@/components'
+import { Button } from '@/components/ui'
+import { defaultLanguage } from '@/i18next'
 
-import SOURCE_LINKS from './SourceLinks.json';
-import styles from './SummarySection.module.scss';
+import styles from './SummarySection.module.scss'
+import profilePicture from './images/profile_picture.jpg'
 
-const SummarySection = () => {
-  const source_links = SOURCE_LINKS as SourceLinkType[];
+const RESUMES = import.meta.glob<ImageModule>('./images/*.pdf')
+
+const SummarySection: FC = () => {
+  const { t, i18n } = useTranslation('default', { keyPrefix: 'summary' })
+  const { t: t2 } = useTranslation('default', { keyPrefix: 'source links' })
+  const resume = useImage(RESUMES, (key) => key.includes((i18n.language || defaultLanguage).toUpperCase()))
+
+  const source_links = SOURCE_LINKS as SourceLinkType[]
 
   return (
     <Section anchor="home" containerClassName={styles.container}>
       <>
         <article className={styles.textContainer}>
           <div>
-            <h2>Hi, I'm Audrey!</h2>
+            <h2>{t('greeting')}</h2>
             <h3>
-              <TextCarrousel
-                words={['react', 'vue', 'javascript', 'creative', 'enthusiast', 'passionate']}
-                textClassName={styles.highlightedText}
-              /> frontend dev
+              <Trans
+                i18nKey="carrousel.main"
+                t={t}
+                components={{
+                  textCarrousel: (
+                    <TextCarousel
+                      words={['react', 'vue', 'javascript', 'creative', 'enthusiast', 'passionate'].map((word) => t(`carrousel.words.${word}`))}
+                      textClassName={styles.highlightedText}
+                    />
+                  )
+                }}
+              />
             </h3>
           </div>
 
-          <p>I’m a JavaScript warrior with a solid experience in frontend development (particularly ReactJS) and a strong UX/UI foundation. My love for challenges and eagerness to learn work wonders for me to translate mockups and ideas into proper functional features.</p>
-
-          <Button text="Download resume" onClick={() => window.open(require('./images/Resume - Audrey BOUCHER.pdf'))} />
+          <p>{t('description')}</p>
+          <Button text={t('buttons.download')} onClick={() => window.open(resume)} aria-label='Download Resume' />
         </article>
 
         <figure className={styles.imageContainer}>
-          <img src={require('./images/profile_picture.jpg')} alt="Audrey Boucher" />
+          <img src={profilePicture} alt="Audrey Boucher" />
         </figure>
 
         <div className={classNames(styles.linksContainer, styles.desktopOnly)}>
-          { source_links.map((props, index) => <SourceLink {...props} key={index} />) }
+          { source_links.map(({ text, ...props }, index) => <SourceLink text={t2(text)} {...props} key={index} />) }
         </div>
       </>
     </Section>
-  );
-};
+  )
+}
 
-export default SummarySection;
+export default SummarySection
