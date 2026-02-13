@@ -1,18 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import type { FC } from 'react'
 
-import { Home, NotFound } from './pages';
+const App: FC = () => <></>
 
-import 'normalize-scss/sass/_normalize.scss';
-import './styles/global.scss';
-
-const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" Component={Home} />
-      <Route path="*" Component={NotFound} />
-    </Routes>
-  </BrowserRouter>
-);
-
-export default App;
+export default App

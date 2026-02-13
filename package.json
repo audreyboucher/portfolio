@@ -1,62 +1,65 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "portfolio-vite",
   "private": true,
-  "proxy": "http://localhost:8000",
-  "dependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.8.4",
-    "classnames": "^2.5.1",
-    "concurrently": "^9.1.2",
-    "html-react-parser": "^5.2.2",
-    "normalize-scss": "^8.0.0",
-    "postcss-normalize": "^13.0.1",
-    "react": "^19.0.0",
-    "react-calendly": "^4.3.1",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
-    "react-scripts": "5.0.1",
-    "react-ui-animate": "^4.2.0",
-    "sass": "^1.85.0",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "2.1.1",
+  "type": "module",
   "scripts": {
-    "start": "concurrently \"npm run start:back\" \"npm run start:front\"",
-    "start:front": "react-scripts start",
-    "start:back": "python server/manage.py runserver",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "i18next": "^25.8.0",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-http-backend": "^3.0.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.5.4",
+    "react-router": "^7.13.0",
+    "require-context": "^1.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.4",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@types/react-router-dom": "^5.3.3",
-    "prettier": "3.5.1",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.7.3"
+    "@eslint/js": "^9.39.1",
+    "@storybook/addon-a11y": "^10.2.7",
+    "@storybook/addon-docs": "^10.2.7",
+    "@storybook/addon-vitest": "^10.2.7",
+    "@storybook/builder-vite": "^10.2.7",
+    "@storybook/react-vite": "^10.2.7",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "eslint-plugin-storybook": "^10.2.7",
+    "globals": "^16.5.0",
+    "happy-dom": "^20.4.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "playwright": "^1.58.1",
+    "sass": "^1.97.3",
+    "sass-embedded": "^1.97.3",
+    "storybook": "^10.2.7",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "npm:rolldown-vite@7.2.5",
+    "vite-tsconfig-paths": "^6.0.5",
+    "vitest": "^4.0.18",
+    "vitest-dom": "^0.1.1"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@7.2.5"
   }
 }

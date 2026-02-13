@@ -1,48 +1,73 @@
-# Audrey Boucher's portfolio
+# React + TypeScript + Vite
 
-In this repository, you'll find the code that's currently used on [my portfolio](http://www.audreyboucher.dev/).
-This repository is meant as a small overview of the way I structure and code my React projects.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Mockups
+Currently, two official plugins are available:
 
-Additionally, the mockups are available on [Figma](https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio).
-It's meant to showcase my skills as a UI/UX designer.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## To do
+## React Compiler
 
-This is an unfinished project and here is still a lot of work to do:
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-### On the front side
+## Expanding the ESLint configuration
 
-- Create a success message on sending a message
-- Handle errors coming from the backend server
-- Create dynamic emailings
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### On the back side
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-- Handle message creation
-- Send emails to confirm its creation
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-### Regarding security
-
-- Create environment files
-- Protect the form from robots
-
-### Code improvements
-
-- Create unit/e2e tests
-- Add aliases
-
-## Run the project locally
-
-### Installation
-
-```shell
-$ npm install
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-### `npm start`
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Runs the React app in the development mode and concurrently starts the Django server.
-Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
-Open [http://localhost:8000](http://localhost:8000) to access the Django admin app.
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

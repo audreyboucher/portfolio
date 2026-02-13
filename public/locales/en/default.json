@@ -1,0 +1,52 @@
+{
+  "404": {
+    "title": "Sorry! This page cannot be found",
+    "description": "The page you are looking for doesn’t exist or has been moved",
+    "button": "Go to the homepage"
+  },
+  "nav": {
+    "home": "Home",
+    "about": {
+      "main": "About",
+      "submenus": {
+        "me": "About me",
+        "skills": "Skills",
+        "education": "Education",
+        "experiences": "Experiences"
+      }
+    },
+    "projects": {
+      "main": "Projects",
+      "submenus": {
+        "vag": "Le Vélo à Gaufres"
+      }
+    },
+    "contact": "Contact"
+  },
+  "tag": {
+    "coming soon": "Coming soon"
+  },
+  "source links": {
+    "github": "See this website’s code on GitHub",
+    "figma": "See this website’s mockups on Figma",
+    "storybook": "See this website’s components on Storybook"
+  },
+  "summary": {
+    "greeting": "Hi, I’m Audrey!",
+    "description": "I’m a JavaScript warrior with a solid experience in frontend development (particularly ReactJS) and a strong UX/UI foundation. My love for challenges and eagerness to learn work wonders for me to translate mockups and ideas into proper functional features.",
+    "buttons": {
+      "download": "Download resume"
+    },
+    "carrousel": {
+      "main": "<textCarrousel/> frontend dev",
+      "words": {
+        "react": "ReactJS",
+        "vue": "VueJS",
+        "javascript": "JavaScript",
+        "creative": "creative",
+        "enthusiast": "enthusiast",
+        "passionate": "passionate"
+      }
+    }
+  }
+}

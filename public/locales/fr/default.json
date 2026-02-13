@@ -1,0 +1,52 @@
+{
+  "404": {
+    "title": "Désolé ! Cette page est introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée",
+    "button": "Aller à la page d'accueil"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": {
+      "main": "À propos",
+      "submenus": {
+        "me": "À propos de moi",
+        "skills": "Compétences",
+        "education": "Formations",
+        "experiences": "Expériences"
+      }
+    },
+    "projects": {
+      "main": "Projets",
+      "submenus": {
+        "vag": "Le Vélo à Gaufres"
+      }
+    },
+    "contact": "Contact"
+  },
+  "tag": {
+    "coming soon": "Bientôt"
+  },
+  "source links": {
+    "github": "Voir le code de ce site sur GitHub",
+    "figma": "Voir les maquettes de ce site sur Figma",
+    "storybook": "Voir les composants de ce site sur Storybook"
+  },
+  "summary": {
+    "greeting": "Salut, je suis Audrey !",
+    "description": "Développeuse JavasScript avec une solide expérience en front-end (particulièrement avec React.JS) et une forte appétence pour l’UX/UI design, mon goût pour les challenges et ma volonté d’apprendre font des merveilles pour me permettre de traduire maquettes et idées en réelles features prêtes à emploi.",
+    "buttons": {
+      "download": "Télécharger mon CV"
+    },
+    "carrousel": {
+      "main": "développeuse front <textCarrousel/>",
+      "words": {
+        "react": "ReactJS",
+        "vue": "VueJS",
+        "javascript": "JavaScript",
+        "creative": "créative",
+        "enthusiast": "enthousiaste",
+        "passionate": "passionnée"
+      }
+    }
+  }
+}
