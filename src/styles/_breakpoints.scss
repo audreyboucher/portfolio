@@ -1,0 +1,7 @@
+// Media query breakpoints
+$mobile_max_width: 47.9375rem;
+$mobile_nav_width: 67.5rem;
+$smaller_mobile_nav_width: 25rem;
+$desktop_max_width: 75rem;
+$section_padding: 2.5rem;
+$section_max_width: $desktop_max_width - 2 * $section_padding;

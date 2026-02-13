@@ -1,10 +1,12 @@
+@use 'sass:math';
+
 @mixin rounded-hex($main-radius: 30%, $rounding-radius: 10%, $precision: 20) {
 	$n: 6;
-	$central-angle: 360deg / $n;
-	$angle: ($n - 2) * 180deg / $n;
-	$max-var-angle: 2 * (90deg - $angle / 2);
+	$central-angle: math.div(360deg, $n);
+	$angle: ($n - 2) * math.div(180deg, $n);
+	$max-var-angle: 2 * (90deg - math.div($angle, 2));
 	$precision: 6;
-	$unit-var-angle: $max-var-angle / $precision;
+	$unit-var-angle: math.div($max-var-angle, $precision);
 	
 	$r-diff: $main-radius + $rounding-radius;
 
@@ -25,4 +27,13 @@
 	}
 	
 	clip-path: polygon($points);
+}
+
+@mixin animate($name, $limit, $property, $original, $new) {
+  @keyframes #{$name} {
+		0% { #{$property}: $original; }
+		#{$limit * 1%} { #{$property}: $original; }
+		#{($limit + 1) * 1%} { #{$property}: $new; }
+		100% { #{$property}: $new; }
+  }
 }
