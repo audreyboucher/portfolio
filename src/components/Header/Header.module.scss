@@ -1,49 +1,71 @@
-@import '../../styles/colors';
-@import '../../styles/variables';
+@use '@/styles/breakpoints' as *;
 
 .container {
   position: fixed;
   top: 0;
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: 0 40px;
-  background: $header_bg;
+  height: var(--header-height);
+  padding: 0 2.5rem;
+  background: var(--background-header);
   z-index: 100;
 
   & > div {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    gap: 1.25rem;
     margin: 0 auto;
-    max-width: $desktop_max_width;
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100%;
   }
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
+  gap: 1.25rem;
   cursor: pointer;
+
+  &:focus-visible svg {
+    border-width: .375rem;
+    border-radius: .375rem;
+    padding: .375rem;
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
-  width: $header_container_height;
-  height: $header_container_height;
-  background: $secondary;
+  width: var(--header-height);
+  height: var(--header-height);
+  background: var(--primary);
   cursor: pointer;
 
+  svg {
+    border: 0 solid var(--background-header);
+    transition: all .1s linear;
+  }
+
   & + h1 {
-    text-transform: uppercase;
     font-weight: 600;
-    cursor: default;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 }
 
-@media screen and (max-width: $mobile_nav_max_width) {
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (max-width: $mobile_nav_width) {
   .container {
-    padding: 10px 20px;
+    padding: .625rem 1.25rem;
 
     & > div {
       align-items: center;
@@ -51,8 +73,22 @@
   }
 
   .logo {
-    padding: 10px;
-    width: 60px;
-    height: 60px;
+    padding: .625rem;
+    width: 3.125rem;
+    height: 3.125rem;
+
+    & + h1 {
+      font-size: clamp(1rem, 1vw, 1.5rem);
+    }
+  }
+
+  .navContainer {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: $smaller_mobile_nav_width) {
+  .logoContainer h1 {
+    display: none;
   }
 }

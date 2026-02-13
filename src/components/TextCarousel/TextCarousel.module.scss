@@ -1,0 +1,32 @@
+@use '@/styles/breakpoints' as *;
+
+.listContainer {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: var(--carousel-height);
+  line-height: var(--carousel-height);
+  overflow: hidden;
+  transition: width 1s linear;
+}
+
+.listItem {
+  display: flex;
+  align-self: flex-start;
+  transform: translate(0, 0);
+
+  &.animate {
+    transform: translate(0, calc(-1 * var(--carousel-height)));
+    transition: transform 1s linear;
+  }
+}
+
+@media screen and (max-width: $section_max_width) {
+  .listContainer {
+    display: flex;
+  }
+
+  .listItem {
+    align-self: center;
+  }
+}

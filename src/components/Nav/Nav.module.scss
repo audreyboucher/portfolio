@@ -1,7 +1,6 @@
-@import '../../styles/colors';
-@import '../../styles/variables';
+@use '@/styles/breakpoints' as *;
 
-$left_margin: 80px;
+$left_margin: 5rem;
 
 .list {
   height: 100%;
@@ -12,50 +11,14 @@ $left_margin: 80px;
     & > div:not(.sourceLinks) {
       display: flex;
       align-items: center;
+      gap: 1.5rem;
       height: 100%;
     }
   }
 }
 
-@media screen and (min-width: #{$mobile_nav_max_width + 1}) {
-  .mobileOnly {
-    display: none;
-  }
-}
-
-@media screen and (max-width: $mobile_nav_max_width) {
-  .list {
-    position: fixed;
-    top: $header_container_height;
-    bottom: 0;
-    left: 100%;
-    right: 0;
-    width: calc(100% - $header_container_height);
-    height: calc(100% - $header_container_height);
-    transition: left .3s linear;
-
-    & > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 40px;
-      background: $header_bg;
-
-      & > div:not(.sourceLinks) {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-      }
-    }
-  }
-
-  .isMenuOpened .list {
-    left: $header_container_height;
-  }
-
-  .sourceLinks, .button {
-    display: flex;
-  }
+.itemsContainer {
+  display: flex;
 }
 
 .overlay {
@@ -71,8 +34,8 @@ $left_margin: 80px;
 .button {
   justify-content: center;
   align-items: center;
-  width: 45px;
-  height: 45px;
+  width: 2.75rem;
+  height: 2.75rem;
 
   &:before, &:after {
     border-radius: 0;
@@ -88,18 +51,19 @@ $left_margin: 80px;
   }
 
   span {
-    display: flex;
+    display: flex !important;
     padding: 0;
   }
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
   }
 }
 
 .sourceLinks {
   flex-direction: column;
+  gap: clamp(.75rem, 1vw, 1.25rem);
   width: 100%;
 
   a {
@@ -111,18 +75,77 @@ $left_margin: 80px;
     left: auto;
     right: auto;
     margin: 0;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     width: 100%;
-    height: 50px;
-    background: rgba($secondary, .7);
-    font-size: 14px;
-    line-height: 18px;
+    height: 3.125rem;
+    font-size: clamp(.75rem, .5vw, .875rem);
+    line-height: clamp(.875rem, .5vw, 1.125rem);
     text-transform: none;
     text-wrap: auto;
     transform: none;
+  }
+}
 
-    img {
-      margin-right: 20px;
+@media screen and (min-width: $mobile_nav_width) {
+  .mobileOnly {
+    display: none;
+  }
+
+  .itemsContainer {
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+  }
+}
+
+@media screen and (max-width: $mobile_nav_width) {
+  .list {
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    width: calc(100% - var(--header-height));
+    height: calc(100% - var(--header-height));
+    transition: left .3s linear;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 2.5rem;
+      background: var(--background-header);
+      overflow-y: auto;
+
+      & > div:not(.sourceLinks) {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+      }
     }
+  }
+
+  .isMenuOpened .list {
+    left: var(--header-height);
+  }
+
+  .itemsContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: .625rem;
+  }
+
+  .sourceLinks,
+  .button {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: $smaller_mobile_nav_width) {
+  .isMenuOpened .list {
+    left: 0;
+    width: 100%;
   }
 }
