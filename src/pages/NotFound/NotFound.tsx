@@ -1,18 +1,24 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next'
 
-import { Button } from '../../components/common/ui';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation'
+import { Button } from '@/components/ui'
 
-import styles from './NotFound.module.scss';
+import styles from './NotFound.module.scss'
 
-const NotFound = () => (
-  <section className={styles.container}>
-    <div>
-      <h1 className={styles.title}>404</h1>
-      <h2 className={styles.subtitle}>Sorry! This page cannot be found</h2>
-      <p className={styles.paragraph}>The page you are looking for doesn’t exist or has been moved</p>
-      <Button text="Go to the homepage" onClick={() => { window.location.href = '/'; }} />
-    </div>
-  </section>
-);
+const NotFound = () => {
+  const { t } = useTranslation('default', { keyPrefix: '404' })
+  const { navigateTo } = useLanguageNavigation()
 
-export default NotFound;
+  return (
+    <main className={styles.container} data-testid="404">
+      <div>
+        <h1 className={styles.title}>404</h1>
+        <h2 className={styles.subtitle}>{t('title')}</h2>
+        <p className={styles.paragraph}>{t('description')}</p>
+        <Button text={t('button')} onClick={() => navigateTo('')} />
+      </div>
+    </main>
+  )
+}
+
+export default NotFound
