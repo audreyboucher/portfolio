@@ -1,0 +1,134 @@
+@use 'sass:list';
+
+.button {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  span {
+    position: relative;
+    display: block;
+    padding: clamp(.875rem, 1.5vw, 1rem) clamp(1.75rem, 1.5vw, 2rem);
+    border-radius: var(--radius);
+    color: var(--background);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    text-transform: uppercase;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--radius);
+    transition: all .2s ease-in-out;
+  }
+
+  &:before {
+    background-color: var(--primary);
+  }
+
+  &:after {
+    border: thin solid var(--primary);
+  }
+
+  &:hover,
+  &:focus-visible {
+    $gap: .25rem;
+
+    &:before {
+      top: $gap;
+      bottom: $gap;
+      left: $gap;
+      right: $gap;
+    }
+
+    &:after {
+      top: -$gap;
+      bottom: -$gap;
+      left: -$gap;
+      right: -$gap;
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+
+    span {
+      color: var(--background-secondary);
+    }
+
+    &:before {
+      background-color: var(--disabled);
+    }
+
+    &:after {
+      border-color: var(--disabled)
+    }
+  }
+
+  &.loading {
+    pointer-events: none;
+  }
+}
+
+$loader_width: 2.5rem;
+$loader_height: 3.75rem;
+$loader_dot_size: calc($loader_width / 6);
+$denominators: 1, 1, 4, 7;
+
+@keyframes increase {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes moveRight {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(calc($loader_width * .3), 0); }
+}
+
+@keyframes decrease {
+  0% { transform: scale(1); }
+  100% { transform: scale(0); }
+}
+
+.loader {
+  position: relative;
+  margin: 0 1.875rem;
+  width: $loader_width;
+  height: $loader_height;
+  color: var(--background);
+
+  div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100%;
+    width: $loader_dot_size;
+    height: $loader_dot_size;
+    background: var(--background);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+    @for $i from 1 to 5 {
+      &:nth-child(#{$i}) {
+        left: calc($loader_width / 10 * list.nth($denominators, $i));
+      }
+    }
+
+    &:first-child {
+      animation: increase .6s infinite;
+    }
+
+    &:last-child {
+      animation: decrease .6s infinite;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      animation: moveRight .6s infinite;
+    }
+  }
+}

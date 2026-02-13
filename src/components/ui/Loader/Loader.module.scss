@@ -1,0 +1,29 @@
+@keyframes run {
+  0% { cx: 1.25rem; }
+  50% { cx: 29.375rem; }
+  100% { cx: 1.25rem; }
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--background);
+  z-index: 500;
+}
+
+.svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font);
+  font-size: 4.375rem;
+  font-weight: 800;
+}
+
+.circle {
+  animation: run 5s ease-in-out infinite;
+}

@@ -1,0 +1,137 @@
+@mixin animate($name, $limit, $property, $original, $new) {
+  @keyframes #{$name} {
+    0% { #{$property}: $original; }
+    #{$limit * 1%} { #{$property}: $original; }
+    #{($limit + 1) * 1%} { #{$property}: $new; }
+    100% { #{$property}: $new; }
+  }
+}
+
+$size: 1.75rem;
+$padding: 1.5rem;
+$animation-duration: .3s;
+$languages: ('en', 'fr');
+
+@include animate(toFront, 50, z-index, 1, 2);
+@include animate(toBack, 50, z-index, 2, 1);
+
+.container {
+  position: relative;
+  border: none;
+  padding: 0 $padding;
+  color: var(--text);
+
+  &[disabled] {
+    opacity: .6;
+
+    &, & .switch {
+      cursor: not-allowed;
+    }
+  }
+
+  &:focus-visible > div {
+    border-radius: $size;
+    outline: .125rem solid var(--primary);
+  }
+
+  & > label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: .875rem;
+    font-weight: 300;
+    opacity: .3;
+    transition: opacity $animation-duration linear;
+
+    &:first-of-type {
+      left: 0;
+    }
+
+    & + label {
+      right: 0;
+    }
+  }
+
+  @each $lang in $languages {
+    &:has([id="lang-#{$lang}"][checked]) > label[for="lang-#{$lang}"] {
+      opacity: .8;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  box-shadow: 0 .05em .08em -.01em rgba(var(--background), .7);
+  border: thin solid var(--background);
+  border-radius: $size;
+  width: calc($size * 2);
+  height: $size;
+  overflow: hidden;
+  cursor: pointer;
+
+  label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: toBack $animation-duration;
+    z-index: 1;
+
+    &:has([checked]) {
+      animation: toFront $animation-duration;
+      z-index: 2;
+    }
+
+    &:first-of-type {
+      right: 0;
+
+      &:has([checked]) ~ .toggle {
+        left: .125rem;
+      }
+    }
+
+    & + label {
+      left: 0;
+
+      &:has([checked]) ~ .toggle {
+        left: calc(100% - $size + .3125rem);
+      }
+    }
+
+    @each $lang in $languages {
+      &[for="lang-#{$lang}"] {
+        background-image: url('./images/#{$lang}.svg');
+      }
+    }
+  }
+}
+
+.toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: .25rem solid var(--background);
+  box-shadow: 0 .1em .15em -.05em rgba(#FFF, .9) inset;
+  border-radius: $size;
+  width: calc($size - .375rem);
+  height: calc($size - .375rem);
+  background: linear-gradient(#F5F5F5 10%, #EEE);
+  transition: left $animation-duration linear;
+  z-index: 4;
+}
+
+
+.shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 .07em .1em -.1em rgba(#000, .8) inset;
+  border-radius: $size;
+  background: linear-gradient(rgba(#000, .2), rgba(#FFF, 0));
+  z-index: 3;
+}

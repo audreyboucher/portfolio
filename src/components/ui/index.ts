@@ -1,0 +1,6 @@
+export { default as Button } from './Button/Button'
+export { default as Icon, Icons } from './Icon/Icon'
+export { default as LangSwitch } from './LangSwitch/LangSwitch'
+export { default as Loader } from './Loader/Loader'
+export { default as Logo, Version as LogoVersion } from './Logo/Logo'
+export { default as Tag } from './Tag/Tag'
