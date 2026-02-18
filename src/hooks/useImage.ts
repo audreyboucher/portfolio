@@ -6,7 +6,10 @@ export type ImageModule = {
   default: string
 }
 
-export const useImage = (images: Record<string, () => Promise<ImageModule>>, findFile: (key: string) => boolean): string | undefined => {
+const useImage = (
+  images: Record<string, () => Promise<ImageModule>>,
+  findFile: (key: string) => boolean
+): string | undefined => {
   const [image, setImage] = useState<string>()
 
   useEffect(() => {
@@ -21,3 +24,5 @@ export const useImage = (images: Record<string, () => Promise<ImageModule>>, fin
 
   return image
 }
+
+export default useImage

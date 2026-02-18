@@ -2,7 +2,7 @@ import { useState, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 
-import { useIsMobile } from '@/hooks/useIsMobile'
+import useIsMobile from '@/hooks/useIsMobile'
 
 import { NavItem, type NavItemProps, SourceLink, SOURCE_LINKS, type SourceLinkType } from '@/components'
 import { Button, Icon, Icons } from '@/components/ui'
@@ -44,7 +44,7 @@ const Nav: FC = () => {
         <Icon icon={isMenuOpened ? Icons.Cross : Icons.Menu} />
       </Button>
 
-      <ul className={styles.list} aria-label="Menu" aria-hidden={!isMenuOpened && isMobile}>
+      <ul className={styles.list} aria-label="Menu" {...(!isMenuOpened && isMobile ? { 'aria-hidden': true } : {})}>
         <div>
           <div>
             <div className={styles.itemsContainer}>

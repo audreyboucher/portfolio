@@ -1,6 +1,6 @@
 import { Suspense, type FC } from 'react'
 
-import { useImage, type ImageModule } from '@/hooks/useImage'
+import useImage, { type ImageModule } from '@/hooks/useImage'
 
 const ICONS = import.meta.glob<ImageModule>('./icons/*.svg')
 

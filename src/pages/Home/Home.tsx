@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 
-import { Header, SummarySection } from '@/components'
+import { Header, SummarySection, AboutMeSection } from '@/components'
 import { Loader } from '@/components/ui'
 
 const Home: FC = () => (
@@ -8,6 +8,7 @@ const Home: FC = () => (
     <Loader />
     <Header />
     <SummarySection />
+    <AboutMeSection />
   </main>
 )
 

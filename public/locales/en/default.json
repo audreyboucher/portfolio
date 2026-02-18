@@ -37,8 +37,8 @@
     "buttons": {
       "download": "Download resume"
     },
-    "carrousel": {
-      "main": "<textCarrousel/> frontend dev",
+    "carousel": {
+      "main": "<textCarousel/> frontend dev",
       "words": {
         "react": "ReactJS",
         "vue": "VueJS",
@@ -47,6 +47,22 @@
         "enthusiast": "enthusiast",
         "passionate": "passionate"
       }
+    }
+  },
+  "about": {
+    "title": "A bit more about me",
+    "keywords": {
+      "curiosity": "Curiosity",
+      "consistency": "Consistency",
+      "empathy": "Empathy",
+      "communication": "Communication",
+      "patience": "Patience",
+      "attentiveness": "Attentiveness"
+    },
+    "paragraphs": {
+      "curiosity": "As a triathlete, I’m always testing the latest training methods and techs for the sports I enjoy. I’m in a constant search for ways to improve my technique and performances.\nI learnt through endurance sports not to take anything for granted. Fitness is more about consistency than intensity: it takes a long time to build but can vanish in the blink of an eye. I’ve experienced it first hand.\nI believe that being able to question oneself, seek potential solutions, try them out, fail and repeat is key to eventually succeed.\nAnd I’m willing to do the work.",
+      "empathy": "Working with NGOs to protect animals and the environment is an essential part of my life.\nBesides fulfilling my desire to have a positive impact and educate the public on the issues we face as a society, it’s an excellent way for me to improve my communication skills and challenge myself.\nI’m an introvert and engaging conversations with strangers felt like an impossible task to do at first. But, after throwing myself under the bus -and a few awkward moments-, I managed to be more effective with my speech and arguments.\nMy new found ability to respond to the person in front of me is enhanced by my more innate listening and empathizing skills. It really is a superpower.",
+      "patience": "Living with a companion animal is a gift as well as a challenge.\nPrior to having my dog Satay in my life, I dreamt of an active lifestyle, running regularly with my dog. But this just isn’t who he is. He’s more of a couch potato.\nIf you hear snoring during our One-on-One, that’s him!\nI like to believe that, even though he’s not the dog I dreamt of, he rather is the one I needed in my life. He taught me an important skill I very much lacked: patience."
     }
   }
 }

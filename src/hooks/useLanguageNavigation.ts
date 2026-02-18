@@ -5,7 +5,7 @@ type NavigateOptions = {
   replace?: boolean
 }
 
-export const useLanguageNavigation = () => {
+const useLanguageNavigation = () => {
   const { i18n } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
@@ -30,3 +30,5 @@ export const useLanguageNavigation = () => {
     redirectToLanguagePath,
   }
 }
+
+export default useLanguageNavigation

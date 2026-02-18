@@ -49,7 +49,7 @@ const TextCarousel: FC<Props> = ({ words, textClassName }) => {
   }, [])
 
   return (
-    <ul className={styles.listContainer} style={{ width }} aria-label="Text Carrousel">
+    <ul className={styles.listContainer} style={{ width }} aria-label="Text Carousel">
       {list.map((el, i) =>
         <li
           className={classNames(styles.listItem, textClassName, { [styles.animate]: isAnimationOn })}

@@ -2,11 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-interface UseIsMobileReturn {
-  isMobile: boolean
-}
-
-export const useIsMobile = (): UseIsMobileReturn => {
+const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false)
 
   const maxWidth = 767
@@ -37,3 +33,5 @@ export const useIsMobile = (): UseIsMobileReturn => {
     isMobile,
   }
 }
+
+export default useIsMobile

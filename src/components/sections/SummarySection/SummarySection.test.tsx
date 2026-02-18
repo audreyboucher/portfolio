@@ -13,9 +13,9 @@ describe('SummarySection (components/sections)', () => {
     expect(getByLabelText('Section')).toHaveAttribute('id', 'home')
   })
 
-  it('renders the text carrousel', () => {
+  it('renders the text carousel', () => {
     const { getByLabelText } = render(<SummarySection />)
-    expect(getByLabelText('Text Carrousel')).toBeInTheDocument()
+    expect(getByLabelText('Text Carousel')).toBeInTheDocument()
   })
 
   it('opens the resume on click on the button', () => {

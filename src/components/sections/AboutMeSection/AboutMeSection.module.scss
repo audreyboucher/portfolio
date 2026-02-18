@@ -1,0 +1,28 @@
+.container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 9.375rem 0;
+
+  aside {
+    &:after, &:before {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: pre;
+    }
+
+    &:before {
+      content: 'const display_pics = () => {\A    return [';
+    }
+
+    &:after {
+      content: '    ]\A}';
+    }
+  }
+}
+
+.topAligned figure img {
+  object-position: top center;
+}

@@ -2,8 +2,7 @@ import type { FC } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 import classNames from 'classnames'
 
-import { useImage, type ImageModule } from '@/hooks/useImage'
-
+import useImage, { type ImageModule } from '@/hooks/useImage'
 import { TextCarousel, SourceLink, Section, SOURCE_LINKS, type SourceLinkType } from '@/components'
 import { Button } from '@/components/ui'
 import { defaultLanguage } from '@/i18next'
@@ -28,12 +27,12 @@ const SummarySection: FC = () => {
             <h2>{t('greeting')}</h2>
             <h3>
               <Trans
-                i18nKey="carrousel.main"
+                i18nKey="carousel.main"
                 t={t}
                 components={{
-                  textCarrousel: (
+                  textCarousel: (
                     <TextCarousel
-                      words={['react', 'vue', 'javascript', 'creative', 'enthusiast', 'passionate'].map((word) => t(`carrousel.words.${word}`))}
+                      words={['react', 'vue', 'javascript', 'creative', 'enthusiast', 'passionate'].map((word) => t(`carousel.words.${word}`))}
                       textClassName={styles.highlightedText}
                     />
                   )

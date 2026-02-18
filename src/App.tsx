@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Home, NotFound } from '@/pages'
 import { defaultLanguage, supportedLanguages, type Languages } from '@/i18next'
-import { useLanguageNavigation } from '@/hooks/useLanguageNavigation'
+import useLanguageNavigation from '@/hooks/useLanguageNavigation'
 
 const RouteHandler: FC = () => {
   const { lang } = useParams<{ lang: Languages }>()

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import { useLanguageNavigation } from '@/hooks/useLanguageNavigation'
+import useLanguageNavigation from '@/hooks/useLanguageNavigation'
 import { Button } from '@/components/ui'
 
 import styles from './NotFound.module.scss'
