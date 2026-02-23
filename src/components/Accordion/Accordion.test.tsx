@@ -92,7 +92,7 @@ describe('Accordion (components)', () => {
 
     expect(getAllByLabelText("Accordion Slide")[0]).toHaveClass(styles.selected)
 
-    await vi.advanceTimersByTimeAsync(duration)
+    await vi.advanceTimersByTimeAsync(duration * 1000)
 
     waitFor(() => {
       expect(onSelectAction).toHaveBeenCalledWith(1)

@@ -42,11 +42,6 @@ const Accordion: FC<Props> = ({
     setTimeout(() => setProgress(100), 50)
   }, [selected])
 
-  useEffect(() => {
-    const id = setInterval(() => onSelect('next'), animationDuration * 1000)
-    return () => clearInterval(id)
-  }, [selected])
-
   useEffect(() => setProgress(100), [])
 
   useEffect(() => {

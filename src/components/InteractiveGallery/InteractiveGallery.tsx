@@ -1,4 +1,4 @@
-import { useState, useTransition, type FC } from 'react'
+import { useEffect, useState, type FC } from 'react'
 import classNames from 'classnames'
 
 import { StackedCarousel, type CarouselImage, Accordion, type AccordionSlide } from '@/components'
@@ -21,7 +21,6 @@ export const selectionToIndex = (selection: SelectionItem, currentIndex: number,
 }
 
 const InteractiveGallery: FC<Props> = ({ title, slides, interval = ANIMATION_DURATION }) => {
-  const [isPending, startTransition] = useTransition()
   const [selectedItem, setSelectedItem] = useState<number>(0)
 
   const parseImages = (slidesList: AccordionSlide[]): CarouselImage[] =>
@@ -31,18 +30,17 @@ const InteractiveGallery: FC<Props> = ({ title, slides, interval = ANIMATION_DUR
       index,
     }))
 
-  const onSelectAction = (n: SelectionItem) => {
-    if (!isPending) {
-      setSelectedItem(selectionToIndex(n, selectedItem, slides.length))
-      startTransition(async () => {
-        await new Promise(resolve => setTimeout(resolve, 1000))
-      });
-    }
-  }
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setSelectedItem(selectionToIndex('next', selectedItem, slides.length))
+    }, interval * 1000)
+
+    return () => clearTimeout(id)
+  }, [selectedItem])
 
   const props = {
     selected: selectedItem,
-    onSelect: onSelectAction,
+    onSelect: (n: SelectionItem) => setSelectedItem(selectionToIndex(n, selectedItem, slides.length)),
   }
 
   return (

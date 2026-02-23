@@ -2,7 +2,6 @@ import { useState, useEffect, type FC } from 'react'
 import classNames from 'classnames'
 
 import type { SelectionItem } from '@/components'
-import { ANIMATION_DURATION } from '@/components/ui'
 
 import styles from './StackedCarousel.module.scss'
 
@@ -24,7 +23,6 @@ const ImageCarousel: FC<Props> = ({
   images,
   selected = 0,
   onSelect = () => {},
-  animationDuration = ANIMATION_DURATION,
   containerClassName,
 }) => {
   const [isAnimationOn, setIsAnimationOn] = useState<boolean>(false)
@@ -47,15 +45,14 @@ const ImageCarousel: FC<Props> = ({
         const index = getSelectionIndex(tmp, selected)
         return index ? tmp.slice(index) : tmp
       })
-      onSelect('next')
       setIsAnimationOn(false)
-    }, animationDuration * 1000)
+    }, 1000)
 
     return () => clearTimeout(id)
   }, [selected])
 
   return (
-    <ul className={classNames(styles.container, { [styles.animate]: isAnimationOn }, containerClassName)}>
+    <ul className={classNames(styles.container, { [styles.animate]: isAnimationOn }, containerClassName)} aria-label="Carousel">
       {
         order
           .map((i) => images.find(({ index }) => index === i)!)
@@ -67,12 +64,13 @@ const ImageCarousel: FC<Props> = ({
               onKeyUp={({ key }) => { if ([' ', 'Enter'].includes(key)) onSelect(index) }}
               attr-position={i - getSelectionIndex(order, nextSelection)}
               attr-duplicate={i !== order.findIndex((tmp) => tmp === index) ? 1 : 0}
+              aria-label={`Carousel #${index + 1} Slide`}
               tabIndex={0}
             >
               <figure>
                 {path.map((image, imageIndex) =>
-                  <img key={`image${index}-${i}-${imageIndex}`} src={image} alt={alt} />)
-                }
+                  <img key={`image${index}-${i}-${imageIndex}`} src={image} alt={alt} />
+                )}
               </figure>
             </li>
           ))
