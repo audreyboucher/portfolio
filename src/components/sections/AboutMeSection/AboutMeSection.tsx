@@ -11,27 +11,27 @@ const IMAGES = import.meta.glob<ImageModule>('./images/*.(png|jpg|jpeg|gif)')
 const AboutMeSection: FC = () => {
   const { t } = useTranslation('default', { keyPrefix: 'about' })
 
-  const getImage = (name: string): string => useImage(IMAGES, (key) => key === `./images/${name}`)!
+  const useSlideImage = (name: string): string => useImage(IMAGES, (key) => key.endsWith(name))!
 
   const SLIDES: AccordionSlide[] = [
     {
       keywords: [t('keywords.curiosity'), t('keywords.consistency')],
       description: t('paragraphs.curiosity').split('\n'),
-      cover: [getImage('triathlon.jpeg')],
+      cover: [useSlideImage('triathlon.jpeg')],
     },
     {
       keywords: [t('keywords.empathy'), t('keywords.communication')],
       description: t('paragraphs.empathy').split('\n'),
       cover: [
-        getImage('activism.gif'),
-        getImage('activism.jpg'),
+        useSlideImage('activism.gif'),
+        useSlideImage('activism.jpg'),
       ],
       className: styles.topAligned,
     },
     {
       keywords: [t('keywords.patience'), t('keywords.attentiveness')],
       description: t('paragraphs.patience').split('\n'),
-      cover: [getImage('dog.jpg')],
+      cover: [useSlideImage('dog.jpg')],
     },
   ]
 

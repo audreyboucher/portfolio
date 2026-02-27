@@ -12,7 +12,7 @@ const meta = {
     isLoading: {
       name: 'IsLoading',
       control: 'boolean',
-      description: "To force the display of the loader (otherwise it disappears once the page is loaded)",
+      description: 'To force the display of the loader (otherwise it disappears once the page is loaded)',
       default: false,
     },
   },

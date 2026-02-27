@@ -35,7 +35,7 @@ describe('LangSwitch (components/ui)', () => {
     })
   })
 
-  it('toggles the language on click on it', async () => {
+  it('toggles the language on click on it', () => {
     const onLanguageChangeAction = vi.fn()
     const { getByLabelText, getByDisplayValue } = renderWithProviders(<LangSwitch />, { changeLanguage: onLanguageChangeAction })
 
@@ -47,7 +47,7 @@ describe('LangSwitch (components/ui)', () => {
     })
   })
 
-  it('toggles the language on pressing the space key', async () => {
+  it('toggles the language on pressing the space key', () => {
     const onLanguageChangeAction = vi.fn()
     const { getByLabelText, getByDisplayValue } = renderWithProviders(<LangSwitch />, { changeLanguage: onLanguageChangeAction })
 
@@ -59,7 +59,7 @@ describe('LangSwitch (components/ui)', () => {
     })
   })
 
-  it('toggles the language on pressing the enter key', async () => {
+  it('toggles the language on pressing the enter key', () => {
     const onLanguageChangeAction = vi.fn()
     const { getByLabelText, getByDisplayValue } = renderWithProviders(<LangSwitch />, { changeLanguage: onLanguageChangeAction })
 

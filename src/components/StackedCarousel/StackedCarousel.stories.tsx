@@ -10,24 +10,24 @@ const meta = {
   component: StackedCarousel,
   argTypes: {
     images: {
-      name: "Images",
+      name: 'Images',
       control: 'object',
-      description: "Array of images to display in the carousel, along with their index and alt message",
+      description: 'Array of images to display in the carousel, along with their index and alt message',
     },
     selected: {
       name: 'Selected',
       control: 'number',
-      description: "Index of the currently selected slide, it will be highlighted and its description will be displayed",
+      description: 'Index of the currently selected slide, it will be highlighted and its description will be displayed',
     },
     onSelect: {
       name: 'onSelect',
       action: 'selected',
-      description: "Function to call when a slide is selected, it receives the index of the selected slide as an argument",
+      description: 'Function to call when a slide is selected, it receives the index of the selected slide as an argument',
     },
     animationDuration: {
       name: 'Animation Duration',
       control: 'number',
-      description: "Duration of the of the progress bar animation in seconds, it will switch to the next slide once the animation is complete",
+      description: 'Duration of the of the progress bar animation in seconds, it will switch to the next slide once the animation is complete',
     },
   },
 } satisfies Meta<typeof StackedCarousel>
@@ -58,12 +58,12 @@ export const Regular: Story = {
     animationDuration: 10,
   },
   render: (args) => {
-    const [{ selected }, updateArgs] = useArgs();
+    const [{ selected }, updateArgs] = useArgs()
  
     const onSelect = (n: SelectionItem) => {
-      updateArgs({ selected: selectionToIndex(n, selected || 0, args.images.length) });
+      updateArgs({ selected: selectionToIndex(n, selected as number || 0, args.images.length) })
     }
 
-    return <StackedCarousel {...args} selected={selected} onSelect={onSelect} />;
+    return <StackedCarousel {...args} selected={selected as number} onSelect={onSelect} />
   },
 }

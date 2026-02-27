@@ -12,7 +12,7 @@ const useLanguageNavigation = () => {
 
   const navigateTo = (path: string, options?: NavigateOptions) => {
     const fullPath = `/${i18n.language}${path.startsWith('/') ? path : `/${path}`}`
-    navigate(fullPath, { replace: options?.replace ?? true })
+    void navigate(fullPath, { replace: options?.replace ?? true })
   }
 
   const redirectToLanguagePath = () => {
@@ -21,7 +21,7 @@ const useLanguageNavigation = () => {
     
     if (pathWithoutLanguage === currentPath) {
       const fullPath = `/${i18n.language}${currentPath.startsWith('/') ? currentPath : `/${currentPath}`}`
-      navigate(fullPath, { replace: true })
+      void navigate(fullPath, { replace: true })
     }
   }
 

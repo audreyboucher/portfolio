@@ -17,7 +17,7 @@ const meta = {
     textClassName: {
       name: 'TextClassName',
       control: 'text',
-      description: "Additional class name for the text elements",
+      description: 'Additional class name for the text elements',
     },
   },
 } satisfies Meta<typeof TextCarousel>

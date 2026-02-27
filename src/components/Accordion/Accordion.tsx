@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, type FC } from 'react'
+import { useEffect, useReducer, useRef, type FC } from 'react'
 import classNames from 'classnames'
 
 import type { SelectionItem } from '@/components'
@@ -22,13 +22,36 @@ type Props = {
   animationDuration?: number // in seconds
 }
 
+type State = {
+  progress: number
+  height?: number
+}
+
+type Action =
+  | { type: 'start' }
+  | { type: 'end' }
+  | { type: 'setHeight', height?: number }
+
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'start':
+      return { ...state, progress: 100 }
+    case 'end':
+      return { ...state, progress: 0 }
+    case 'setHeight':
+      return { ...state, height: action.height }
+    default:
+      return state
+  }
+}
+
 const Accordion: FC<Props> = ({
   slides,
   selected = 0,
   onSelect = () => {},
   animationDuration = ANIMATION_DURATION
 }) => {
-  const [progress, setProgress] = useState<number>(0)
+  const [{ progress, height }, dispatch] = useReducer(reducer, { progress: 0 })
   const { isMobile } = useIsMobile()
   const mobileContainer = useRef<HTMLUListElement>(null)
 
@@ -38,16 +61,19 @@ const Accordion: FC<Props> = ({
   })
 
   useEffect(() => {
-    setProgress(0);
-    setTimeout(() => setProgress(100), 50)
+    dispatch({ type: 'end' })
+    setTimeout(() => dispatch({ type: 'start' }), 50)
   }, [selected])
 
-  useEffect(() => setProgress(100), [])
+  useEffect(() => dispatch({ type: 'start' }), [])
 
   useEffect(() => {
     const handleSize = () => {
-      const container = mobileContainer.current
-      if (container) container.style.minHeight = `${Math.max(...Array.from(container.childNodes).map((el) => (el as HTMLElement).offsetHeight))}px`
+      dispatch({
+        type: 'setHeight',
+        height: Math.max(...Array.from(mobileContainer.current?.childNodes || [])
+          .map((el) => (el as HTMLElement).offsetHeight))
+      })
     }
 
     window.addEventListener('resize', handleSize)
@@ -72,7 +98,7 @@ const Accordion: FC<Props> = ({
         }
       </ul>
 
-      <ul {...swipeHandlers} ref={mobileContainer} className={styles.textContainer} aria-label="Accordion">
+      <ul {...swipeHandlers} ref={mobileContainer} className={styles.textContainer} aria-label="Accordion" style={{ minHeight: height }}>
         {slides.map(({ keywords, description, cover, className }: Slide, index) => (
           <li
             className={classNames(styles.text, className, { [styles.selected]: index === selected })}

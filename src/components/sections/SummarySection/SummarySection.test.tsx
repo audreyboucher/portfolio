@@ -15,7 +15,10 @@ describe('SummarySection (components/sections)', () => {
 
   it('renders the text carousel', () => {
     const { getByLabelText } = render(<SummarySection />)
-    expect(getByLabelText('Text Carousel')).toBeInTheDocument()
+
+    waitFor(() => {
+      expect(getByLabelText('Text Carousel')).toBeInTheDocument()
+    })
   })
 
   it('opens the resume on click on the button', () => {

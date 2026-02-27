@@ -5,7 +5,7 @@ import { Icons } from '@/components/ui'
 import SourceLink from './SourceLink'
 
 const props = {
-  text: "See the code",
+  text: 'See the code',
   icon: Icons.Code,
   link: 'link-to-code',
 }

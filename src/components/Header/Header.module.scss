@@ -5,9 +5,8 @@
   top: 0;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: var(--header-height);
-  padding: 0 2.5rem;
   background: var(--background-header);
   z-index: 100;
 
@@ -17,6 +16,7 @@
     justify-content: space-between;
     gap: 1.25rem;
     margin: 0 auto;
+    padding: 0 2.5rem;
     max-width: var(--max-width);
     width: 100%;
     height: 100%;
@@ -64,12 +64,9 @@
 }
 
 @media screen and (max-width: $mobile_nav_width) {
-  .container {
+  .container > div {
+    align-items: center;
     padding: .625rem 1.25rem;
-
-    & > div {
-      align-items: center;
-    }
   }
 
   .logo {

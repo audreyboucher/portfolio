@@ -7,9 +7,7 @@ describe('Loader (components/ui)', () => {
 
   beforeAll(() => {
     Object.defineProperty(document, 'readyState', {
-      get() {
-        return mockReadyState;
-      },
+      get() { return mockReadyState },
     })
   })
 

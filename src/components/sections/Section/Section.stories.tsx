@@ -12,23 +12,23 @@ const meta = {
     anchor: {
       name: 'Anchor',
       control: 'text',
-      description: "ID of the section, used for navigation and linking",
+      description: 'ID of the section, used for navigation and linking',
     },
     background: {
       name: 'Background',
       control: 'select',
       options: ['primary', 'secondary'],
-      description: "Background color of the section",
+      description: 'Background color of the section',
     },
     containerClassName: {
       name: 'ContainerClassName',
       control: 'text',
-      description: "Additional class name for the section container, allowing for custom styling.",
+      description: 'Additional class name for the section container, allowing for custom styling.',
     },
     children: {
       name: 'Children',
       control: 'text',
-      description: "React element to be displayed inside the section",
+      description: 'React element to be displayed inside the section',
     },
   },
 } satisfies Meta<typeof Section>

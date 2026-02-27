@@ -166,6 +166,24 @@
   --success: #4CAF50;
   --error: #FF5252;
 
+  --skill-html: #F16524;
+  --skill-css: #6F2FA0;
+  --skill-sass: #CE679A;
+  --skill-javascript: #F0DC4E;
+  --skill-react: #0CF;
+  --skill-vue: #3FB984;
+  --skill-typescript: #2D79C7;
+  --skill-django: #34A77B;
+  --skill-cypress: #44C194;
+  --skill-figma: #A259FF;
+  --skill-photoshop: #31A8FF;
+  --skill-illustrator: #FF9A00;
+  --skill-xd: #EF5CE7;
+  --skill-github: #FFF;
+  --skill-gitlab: #E24329;
+  --skill-postgresql: #336791;
+  --skill-jira: #0357D1;
+
   --font: 'Poppins', Arial, sans-serif;
   --symbool-font: 'Jaro', Arial, sans-serif;
 
@@ -194,6 +212,7 @@ body {
   display: flex;
   place-items: center;
   min-height: var(--min-height);
+  overflow-x: hidden;
 }
 
 *, *:before, *:after {

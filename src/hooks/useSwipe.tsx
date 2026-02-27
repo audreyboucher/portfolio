@@ -42,11 +42,11 @@ const useSwipe = ({ onSwipedLeft, onSwipedRight, onSwipedUp, onSwipedDown }: Swi
     const distanceVert = touchVertStart - touchVertEnd
 
     if (Math.abs(distance) > Math.abs(distanceVert)) {
-      if (distance > minSwipeDistance) onSwipedLeft && onSwipedLeft()
-      else onSwipedRight && onSwipedRight()
+      if (distance > minSwipeDistance && onSwipedLeft) onSwipedLeft()
+      else if (distance < minSwipeDistance && onSwipedRight) onSwipedRight()
     } else {
-      if (distanceVert > minSwipeDistance) onSwipedUp && onSwipedUp()
-      else onSwipedDown && onSwipedDown()
+      if (distanceVert > minSwipeDistance && onSwipedUp) onSwipedUp()
+      else if (distanceVert < minSwipeDistance && onSwipedDown) onSwipedDown()
     }
   }
 

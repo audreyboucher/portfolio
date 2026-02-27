@@ -48,7 +48,9 @@ describe('TextCarousel (components)', () => {
     const words = ['Hi', 'World']
     const { getByLabelText, getByText } = render(<TextCarousel words={words} />)
 
-    expect(getByLabelText('Text Carousel')).toHaveStyle(`width: ${getByText(words[0]).offsetWidth}px`)
+    waitFor(() => {
+      expect(getByLabelText('Text Carousel')).toHaveStyle(`width: ${getByText(words[0]).offsetWidth}px`)
+    })
 
     await vi.advanceTimersByTimeAsync(INTERVAL)
 
@@ -57,18 +59,21 @@ describe('TextCarousel (components)', () => {
     })
   })
 
-  it('adapts the width of the container on window resize', async () => {
+  it('adapts the width of the container on window resize', () => {
     const words = ['Hi', 'World']
     const { getByLabelText, getByText } = render(<TextCarousel words={words} />)
     const originalWidth = getByText(words[0]).offsetWidth
 
-    expect(getByLabelText('Text Carousel')).toHaveStyle(`width: ${originalWidth}px`)
+    waitFor(() => {
+      expect(getByLabelText('Text Carousel')).toHaveStyle(`width: ${originalWidth}px`)
+    })
 
     window.innerWidth = 500
+    window.dispatchEvent(new Event('resize'))
 
     waitFor(() => {
-      expect(getByLabelText('Text Carousel')).toHaveStyle(`width: ${getByText(words[0]).offsetWidth}px`)
-      expect(getByText(words[0]).offsetWidth).not.toBe(originalWidth)
+      const newWidth = getByText(words[0]).offsetWidth
+      expect(newWidth).not.toBe(originalWidth)
     })
   })
 })

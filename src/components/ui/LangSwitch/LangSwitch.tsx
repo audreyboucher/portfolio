@@ -18,7 +18,7 @@ const LangSwitch: FC<Props> = ({ disabled }) => {
       const newValue = supportedLanguages.find((value) => value !== language)!
 
       setLanguage(newValue)
-      i18n.changeLanguage(newValue)
+      void i18n.changeLanguage(newValue)
     }
   }
 

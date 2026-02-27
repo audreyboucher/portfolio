@@ -9,7 +9,7 @@ const meta = {
     text: {
       name: 'Text',
       control: 'text',
-      description: "Short piece of text to display within the tag",
+      description: 'Short piece of text to display within the tag',
     },
     type: {
       name: 'Type',

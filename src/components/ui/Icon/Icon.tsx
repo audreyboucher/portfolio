@@ -13,6 +13,25 @@ export enum Icons {
   Code = 'code',
   Image = 'image',
   Pen = 'pen',
+
+  // Skills
+  CSS = 'css',
+  Cypress = 'cypress',
+  Django = 'django',
+  Figma = 'figma',
+  GitHub = 'github',
+  GitLab = 'gitlab',
+  HTML = 'html',
+  Illustrator = 'illustrator',
+  Javascript = 'javascript',
+  Jira = 'jira',
+  Photoshop = 'photoshop',
+  PostgreSQL = 'postgresql',
+  React = 'react',
+  SASS = 'sass',
+  Typescript = 'typescript',
+  Vue = 'vue',
+  XD = 'xd',
 }
 
 type Props = {

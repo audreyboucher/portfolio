@@ -1,10 +1,9 @@
 import { fireEvent, render, waitFor } from '@testing-library/react'
 
 import type { AccordionSlide } from '@/components'
+import styles from '@/components/Accordion/Accordion.module.scss'
 
 import InteractiveGallery from './InteractiveGallery'
-
-import styles from '@/components/Accordion/Accordion.module.scss'
 
 const slide: AccordionSlide = {
   keywords: ['First keyword', 'Second keyword'],
@@ -78,9 +77,7 @@ describe('InteractiveGallery (components)', () => {
       const { getByLabelText, getAllByLabelText } = render(<InteractiveGallery title="Title" slides={[slide, slide, slide]} interval={duration} />)
 
       await vi.advanceTimersByTimeAsync(2000)
-
       fireEvent.click(getByLabelText('Carousel').childNodes[1])
-
       await vi.advanceTimersByTimeAsync(duration * 1000)
 
       waitFor(() => {
@@ -96,9 +93,7 @@ describe('InteractiveGallery (components)', () => {
       const { getByLabelText, getAllByLabelText } = render(<InteractiveGallery title="Title" slides={[slide, slide, slide]} interval={duration} />)
 
       await vi.advanceTimersByTimeAsync(2000)
-
       fireEvent.click(getAllByLabelText('Accordion Slide')[1])
-
       await vi.advanceTimersByTimeAsync(duration * 1000)
 
       waitFor(() => {

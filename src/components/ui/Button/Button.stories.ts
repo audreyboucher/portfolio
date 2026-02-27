@@ -20,18 +20,18 @@ const meta = {
     disabled: {
       name: 'Disabled',
       control: 'boolean',
-      description: "Prevents event from firing when true",
+      description: 'Prevents event from firing when true',
       default: false,
     },
     loading: {
       name: 'Loading',
       control: 'boolean',
-      description: "Prints a loading state and prevents from clicking again",
+      description: 'Prints a loading state and prevents from clicking again',
       default: false,
     },
     onClick: {
       name: 'OnClick',
-      description: "Event triggered on click on the button",
+      description: 'Event triggered on click on the button',
       default: fn(),
     },
   },

@@ -19,7 +19,7 @@ const SourceLinks: FC<Props> = ({ disabled }) => {
 
   return (
     <div className={classNames(styles.sourceLinks, styles.mobileOnly)}>
-      { source_links.map(({ text, ...props }, index) => <SourceLink text={t(text)} {...props} disabled={disabled} key={index} />) }
+      { source_links.map(({ text, ...props }, index) => <SourceLink key={index} text={t(text)} {...props} disabled={disabled} />) }
     </div>
   )
 }

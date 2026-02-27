@@ -20,7 +20,7 @@ const meta = {
       name: 'Icon',
       control: 'select',
       options: Object.values(Icons),
-      description: "Name of the icon (list in /src/components/ui/Icon)",
+      description: 'Name of the icon (list in /src/components/ui/Icon)',
     },
     link: {
       name: 'Link',

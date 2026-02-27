@@ -12,14 +12,14 @@ const meta = {
     disabled: {
       name: 'Disabled',
       control: 'boolean',
-      description: "To enable/disable the switch of language",
+      description: 'To enable/disable the switch of language',
       default: false,
     },
   },
   decorators: [
     (Story, context) => {
-      const language = context.parameters.language || defaultLanguage
-      i18n.changeLanguage(language)
+      const language = context.parameters.language as Languages || defaultLanguage
+      void i18n.changeLanguage(language)
       return (
         <I18nextProvider i18n={i18n}>
           <Story />

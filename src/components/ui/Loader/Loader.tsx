@@ -7,23 +7,27 @@ type Props = {
 }
 
 const Loader: FC<Props> = ({ isLoading: tmp }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isLoading, setIsLoading] = useState<boolean>(document.readyState !== 'complete')
 
   const onPageLoad = () => {
     setIsLoading(false)
     document.documentElement.style.overflow = 'auto'
-  };
+  }
 
   useEffect(() => {
-    document.documentElement.style.overflow = 'hidden'
+    if (isLoading) {
+      document.documentElement.style.overflow = 'hidden'
 
-    if (document.readyState === 'complete') {
-      onPageLoad()
-    } else {
+      document.onreadystatechange = () => {
+        if (document.readyState === 'complete') onPageLoad()
+      }
+
       window.addEventListener('load', onPageLoad, false)
       return () => window.removeEventListener('load', onPageLoad)
+    } else {
+      document.documentElement.style.overflow = 'auto'
     }
-  }, [])
+  }, [isLoading])
 
   return isLoading || tmp ? (
     <section className={styles.container}>

@@ -5,7 +5,7 @@ import StackedCarousel, { type Image } from './StackedCarousel'
 const image: Image = {
   index: 0,
   path: ['http://placehold.co/325x450'],
-  alt: "Image slide",
+  alt: 'Image slide',
 }
 
 const images: Image[] = [image, image, image].map((image, index) => ({ ...image, index }))
@@ -24,7 +24,7 @@ describe('StackedCarousel (components)', () => {
     })
   })
 
-  it('switches to another image', async () => {
+  it('switches to another image', () => {
     const SelectAction = vi.fn()
     const { getByLabelText } = render(<StackedCarousel images={images} selected={0} onSelect={SelectAction} />)
 

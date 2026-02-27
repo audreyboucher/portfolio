@@ -1,5 +1,7 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'
 
+import * as scrollUtils from '@/utils/scroll'
+
 import Header from './Header'
 
 describe('Header (components)', () => {
@@ -24,9 +26,7 @@ describe('Header (components)', () => {
     expect(getByLabelText('Menu')).toBeInTheDocument()
   })
 
-  it('scroll to the top section on click on the title or logo', async() => {
-    const client = await import('@/utils/scroll')
-
+  it('scroll to the top section on click on the title or logo', () => {
     const { getByLabelText } = render(
       <>
         <Header />
@@ -34,7 +34,7 @@ describe('Header (components)', () => {
       </>
     )
 
-    const scrollToAnchor = vi.spyOn(client, 'scrollToAnchor')
+    const scrollToAnchor = vi.spyOn(scrollUtils, 'scrollToAnchor')
     
     fireEvent.click(getByLabelText('Scroll to top'))
 

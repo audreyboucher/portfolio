@@ -35,7 +35,7 @@ const LineProgressBar = ({
   <div className={classNames(styles.lineProgressBar, { [styles.inProgress]: !!value }, className)}>
     <div style={{
       width: `${value || 0}%`,
-      transitionDuration: !!value ? `${animationDuration}s` : undefined,
+      transitionDuration: value ? `${animationDuration}s` : undefined,
       background: color
     }} />
   </div>

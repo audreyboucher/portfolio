@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/vitest'
 import { vi } from 'vitest'
-import type { ReactElement } from 'react'
+import { createElement } from 'react'
 
 export const mockMedia = (query: string) => ({
   matches: false,
@@ -25,33 +25,57 @@ Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
   },
 })
 
-type TransProps = {
-  i18nKey: string;
-  components: {
-    [key: string]: ReactElement
-  }
+class IntersectionObserver {
+  observe = vi.fn()
+  disconnect = vi.fn()
+  unobserve = vi.fn()
 }
 
+Object.defineProperty(global, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: IntersectionObserver,
+})
+
+vi.mock('react-router', async () => {
+  const actual = await vi.importActual('react-router')
+  return {
+    ...actual,
+    BrowserRouter: ({ children }: any) => {
+      const { MemoryRouter } = actual as any
+      const initialEntries = [globalThis.window?.location?.pathname || '/']
+      return createElement(MemoryRouter, { initialEntries }, children)
+    },
+  }
+})
+
+vi.mock('i18next', () => {
+  const mockI18n = {
+    use(plugin: any) { return this },
+    init(options: any) { return mockI18n },
+    language: 'en',
+    changeLanguage: () => Promise.resolve(),
+    on: vi.fn(),
+    off: vi.fn(),
+  }
+  return { default: mockI18n }
+})
+
+vi.mock('i18next-http-backend', () => ({ default: { type: 'backend', init: vi.fn() } }))
+vi.mock('i18next-browser-languagedetector', () => ({ default: { type: 'detector', init: vi.fn() } }))
+
 vi.mock('react-i18next', () => ({
-  useTranslation: () => {
-    return {
-      t: (str: string) => str,
-      i18n: {
-        on: vi.fn(),
-        off: vi.fn(),
-        changeLanguage: () => new Promise(() => {}),
-      },
-    }
-  },
-  initReactI18next: {
-    type: '3rdParty',
-    init: vi.fn(),
-  },
-  I18nextProvider: ({ children }: { children: ReactElement }) => children,
-  Trans: ({ i18nKey, components }: TransProps) => (
-    <>
-      {i18nKey}
-      {Object.values(components).map((component) => component)}
-    </>
-  ),
+  useTranslation: () => ({
+    t: (str: string) => str,
+    i18n: {
+      on: vi.fn(),
+      off: vi.fn(),
+      changeLanguage: () => Promise.resolve(),
+      language: 'en',
+      exists: () => true,
+    },
+  }),
+  initReactI18next: { type: '3rdParty', init: vi.fn() },
+  I18nextProvider: ({ children }: any) => children,
+  Trans: ({ children, i18nKey }: any) => children || i18nKey,
 }))

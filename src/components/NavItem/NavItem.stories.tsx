@@ -13,12 +13,12 @@ const meta = {
     name: {
       name: 'Name',
       control: 'text',
-      description: "Name of the item or subitem",
+      description: 'Name of the item or subitem',
     },
     anchor: {
       name: 'Anchor',
       control: 'text',
-      description: "Name of the anchor the page will scroll to on click on the item or subitem",
+      description: 'Name of the anchor the page will scroll to on click on the item or subitem',
     },
     disabled: {
       name: 'Disabled',
@@ -28,12 +28,12 @@ const meta = {
     },
     onClick: {
       name: 'OnClick',
-      description: "Event triggered on click on the button (when no anchor)",
+      description: 'Event triggered on click on the button (when no anchor)',
       default: fn(),
     },
     subMenu: {
-      name: "SubMenu",
-      description: "Array of NavItems (with all associated props) that will be displayed on hover the main item",
+      name: 'SubMenu',
+      description: 'Array of NavItems (with all associated props) that will be displayed on hover the main item',
       table: {
         type: { summary: 'Item[]' },
       },

@@ -1,5 +1,7 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'
 
+import * as scrollUtils from '@/utils/scroll'
+
 import NavItem from './NavItem'
 
 vi.mock('@/utils/scroll')
@@ -18,9 +20,7 @@ describe('NavItem (components)', () => {
       expect(getByLabelText('Nav item')).toHaveAttribute('tabindex', '0')
     })
 
-    it('scrolls to the anchor on click on the nav item', async () => {
-      const client = await import('@/utils/scroll')
-
+    it('scrolls to the anchor on click on the nav item', () => {
       const { getByLabelText } = render(
         <>
           <NavItem name="test" anchor="test" />
@@ -28,7 +28,7 @@ describe('NavItem (components)', () => {
         </>
       )
 
-      const scrollToAnchor = vi.spyOn(client, 'scrollToAnchor')
+      const scrollToAnchor = vi.spyOn(scrollUtils, 'scrollToAnchor')
 
       fireEvent.click(getByLabelText('Nav item'))
 
@@ -60,9 +60,7 @@ describe('NavItem (components)', () => {
       expect(getAllByLabelText('Sub nav item')).toHaveLength(4)
     })
 
-    it('scrolls to the anchor on click on a sub item', async () => {
-      const client = await import('@/utils/scroll')
-
+    it('scrolls to the anchor on click on a sub item', () => {
       const { getByLabelText } = render(
         <>
           <NavItem name="test" anchor="test" subMenu={[ { name: 'submenu', anchor: 'submenu' } ]} />
@@ -70,7 +68,7 @@ describe('NavItem (components)', () => {
         </>
       )
 
-      const scrollToAnchor = vi.spyOn(client, 'scrollToAnchor')
+      const scrollToAnchor = vi.spyOn(scrollUtils, 'scrollToAnchor')
 
       fireEvent.click(getByLabelText('Nav item'))
 

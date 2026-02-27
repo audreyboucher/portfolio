@@ -50,12 +50,12 @@
   }
 
   &.selected h5 {
-    line-height: clamp(1.25rem, 3vw, 4.5rem);
-    font-size: clamp(1.25rem, 3vw, 4.5rem);
+    line-height: clamp(1.25rem, 5vw, 4.5rem);
+    font-size: clamp(1.25rem, 5vw, 4.5rem);
     color: var(--primary);
 
     span:first-child {
-      font-size: clamp(2rem, 3vw, 5.75rem);
+      font-size: clamp(2rem, 5vw, 5.75rem);
     }
   }
 
@@ -162,12 +162,12 @@
 
     h5 {
       margin-top: clamp(2rem, 2vw, 4.375rem);
-      line-height: clamp(1.25rem, 3vw, 4.5rem);
-      font-size: clamp(1.25rem, 3vw, 4.5rem);
+      line-height: clamp(1.25rem, 5vw, 4.5rem);
+      font-size: clamp(1.25rem, 5vw, 4.5rem);
       color: var(--primary);
 
       span:first-child {
-        font-size: clamp(2rem, 3vw, 5.75rem);
+        font-size: clamp(2rem, 5vw, 5.75rem);
         text-transform: capitalize;
       }
     }

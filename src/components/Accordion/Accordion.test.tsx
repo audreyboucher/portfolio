@@ -26,14 +26,14 @@ describe('Accordion (components)', () => {
 
   it('renders the right amount of slides', () => {
     const { getAllByLabelText } = render(<Accordion slides={[slide, slide, slide, slide]} />)
-    expect(getAllByLabelText("Accordion Slide")).toHaveLength(4)
+    expect(getAllByLabelText('Accordion Slide')).toHaveLength(4)
   })
 
   it('renders the the right selected slide', () => {
     const { getAllByLabelText } = render(<Accordion slides={[slide, slide, slide, slide]} selected={2} />)
 
-    expect(getAllByLabelText("Accordion Slide")[0]).not.toHaveClass(styles.selected)
-    expect(getAllByLabelText("Accordion Slide")[2]).toHaveClass(styles.selected)
+    expect(getAllByLabelText('Accordion Slide')[0]).not.toHaveClass(styles.selected)
+    expect(getAllByLabelText('Accordion Slide')[2]).toHaveClass(styles.selected)
   })
 
   it('is accessible for desktop', () => {
@@ -64,14 +64,14 @@ describe('Accordion (components)', () => {
     const onSelectAction = vi.fn()
     const { getAllByLabelText } = render(<Accordion slides={[slide, slide, slide, slide]} selected={0} onSelect={onSelectAction} />)
 
-    expect(getAllByLabelText("Accordion Slide")[0]).toHaveClass(styles.selected)
+    expect(getAllByLabelText('Accordion Slide')[0]).toHaveClass(styles.selected)
 
-    fireEvent.click(getAllByLabelText("Accordion Slide")[1])
+    fireEvent.click(getAllByLabelText('Accordion Slide')[1])
 
     waitFor(() => {
       expect(onSelectAction).toHaveBeenCalledWith(1)
-      expect(getAllByLabelText("Accordion Slide")[0]).not.toHaveClass(styles.selected)
-      expect(getAllByLabelText("Accordion Slide")[1]).toHaveClass(styles.selected)
+      expect(getAllByLabelText('Accordion Slide')[0]).not.toHaveClass(styles.selected)
+      expect(getAllByLabelText('Accordion Slide')[1]).toHaveClass(styles.selected)
     })
   })
 
@@ -90,14 +90,14 @@ describe('Accordion (components)', () => {
       />
     )
 
-    expect(getAllByLabelText("Accordion Slide")[0]).toHaveClass(styles.selected)
+    expect(getAllByLabelText('Accordion Slide')[0]).toHaveClass(styles.selected)
 
     await vi.advanceTimersByTimeAsync(duration * 1000)
 
     waitFor(() => {
       expect(onSelectAction).toHaveBeenCalledWith(1)
-      expect(getAllByLabelText("Accordion Slide")[0]).not.toHaveClass(styles.selected)
-      expect(getAllByLabelText("Accordion Slide")[1]).toHaveClass(styles.selected)
+      expect(getAllByLabelText('Accordion Slide')[0]).not.toHaveClass(styles.selected)
+      expect(getAllByLabelText('Accordion Slide')[1]).toHaveClass(styles.selected)
     })
   })
 })

@@ -1,4 +1,4 @@
-import { useState, useEffect, type FC } from 'react'
+import { useEffect, useReducer, type FC } from 'react'
 import classNames from 'classnames'
 
 import type { SelectionItem } from '@/components'
@@ -19,37 +19,68 @@ type Props = {
   containerClassName?: string
 }
 
+type State = {
+  order: number[]
+  isAnimationOn: boolean
+  selected: number
+}
+
+type Action =
+  | { type: 'select'; index: number }
+  | { type: 'animationEnd' }
+
+const getSelectionIndex = (imagesList: number[], current: number): number =>
+  imagesList.findLastIndex((index) => index === current)
+
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'select': {
+      if (action.index === state.selected) return state
+
+      const base = state.order
+      const index = getSelectionIndex(base, action.index)
+      const newOrder = index === -1 ? base : [...base, ...base.slice(0, index)]
+
+      return { order: newOrder, isAnimationOn: true, selected: action.index }
+    }
+    case 'animationEnd': {
+      const index = getSelectionIndex(state.order, state.selected)
+
+      if (index <= 0) return { ...state, isAnimationOn: false }
+      return { ...state, order: state.order.slice(index), isAnimationOn: false }
+    }
+    default:
+      return state
+  }
+}
+
 const ImageCarousel: FC<Props> = ({
   images,
   selected = 0,
   onSelect = () => {},
+  animationDuration = 1,
   containerClassName,
 }) => {
-  const [isAnimationOn, setIsAnimationOn] = useState<boolean>(false)
-  const [order, setOrder] = useState<number[]>(images.map(({ index }) => index))
-  const [nextSelection, setNextSelection] = useState<number>(selected)
+  const initialState: State = {
+    order: images.map(({ index }) => index),
+    isAnimationOn: false,
+    selected,
+  }
 
-  const getSelectionIndex = (imagesList: number[], current: number): number =>
-    imagesList.findLastIndex((index) => index === current)
+  const [{ order, isAnimationOn, selected: nextSelection }, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
     if (selected === nextSelection) return
-
-    setIsAnimationOn(true)
+    dispatch({ type: 'animationEnd' })
+    dispatch({ type: 'select', index: selected })
     onSelect(selected)
-    setNextSelection(selected)
-    setOrder((tmp) => [...tmp, ...tmp.slice(0, getSelectionIndex(tmp, selected))])
+  }, [selected, nextSelection, onSelect])
 
-    const id = setTimeout(() => {
-      setOrder((tmp) => {
-        const index = getSelectionIndex(tmp, selected)
-        return index ? tmp.slice(index) : tmp
-      })
-      setIsAnimationOn(false)
-    }, 1000)
-
+  useEffect(() => {
+    if (!isAnimationOn) return
+    const id = setTimeout(() => dispatch({ type: 'animationEnd' }), animationDuration * 1000)
     return () => clearTimeout(id)
-  }, [selected])
+  }, [isAnimationOn, animationDuration])
 
   return (
     <ul className={classNames(styles.container, { [styles.animate]: isAnimationOn }, containerClassName)} aria-label="Carousel">

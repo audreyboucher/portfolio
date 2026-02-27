@@ -19,25 +19,25 @@ const RouteHandler: FC = () => {
 
   useEffect(() => {
     if (!lang || !supportedLanguages.includes(lang)) {
-      redirectToLanguagePath()
+      void redirectToLanguagePath()
       return
     }
 
-    if (i18n.language !== lang) {
-      i18n.changeLanguage(lang)
+    if (i18n.language !== lang as string) {
+      void i18n.changeLanguage(lang)
       window.document.documentElement.lang = lang
     }
-  }, [lang, navigate])
+  }, [lang, i18n, redirectToLanguagePath])
 
   const handleLanguageChange = useCallback((lng: string) => {
     window.document.documentElement.lang = lng
-    if (lng !== langRef.current) navigate(`/${lng}`, { replace: true })
+    if (lng !== langRef.current as string) void navigate(`/${lng}`, { replace: true })
   }, [navigate])
 
   useEffect(() => {
     i18n.on('languageChanged', handleLanguageChange)
     return () => { i18n.off('languageChanged', handleLanguageChange) }
-  }, [handleLanguageChange])
+  }, [handleLanguageChange, i18n])
 
   return (
     <Routes>

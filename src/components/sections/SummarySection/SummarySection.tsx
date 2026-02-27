@@ -50,7 +50,7 @@ const SummarySection: FC = () => {
         </figure>
 
         <div className={classNames(styles.linksContainer, styles.desktopOnly)}>
-          { source_links.map(({ text, ...props }, index) => <SourceLink text={t2(text)} {...props} key={index} />) }
+          { source_links.map(({ text, ...props }, index) => <SourceLink key={index} text={t2(text)} {...props} />) }
         </div>
       </>
     </Section>

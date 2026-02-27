@@ -36,7 +36,7 @@ const InteractiveGallery: FC<Props> = ({ title, slides, interval = ANIMATION_DUR
     }, interval * 1000)
 
     return () => clearTimeout(id)
-  }, [selectedItem])
+  }, [selectedItem, interval, slides.length])
 
   const props = {
     selected: selectedItem,

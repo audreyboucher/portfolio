@@ -15,22 +15,22 @@ const meta = {
     slides: {
       name: 'Slides',
       control: 'object',
-      description: "Array of slides to display in the accordion, each slide should have a keywords array, a description array and a cover array",
+      description: 'Array of slides to display in the accordion, each slide should have a keywords array, a description array and a cover array',
     },
     selected: {
       name: 'Selected',
       control: 'number',
-      description: "Index of the currently selected slide, it will be highlighted and its description will be displayed",
+      description: 'Index of the currently selected slide, it will be highlighted and its description will be displayed',
     },
     onSelect: {
       name: 'onSelect',
       action: 'selected',
-      description: "Function to call when a slide is selected, it receives the index of the selected slide as an argument",
+      description: 'Function to call when a slide is selected, it receives the index of the selected slide as an argument',
     },
     animationDuration: {
       name: 'Animation Duration',
       control: 'number',
-      description: "Duration of the of the progress bar animation in seconds, it will switch to the next slide once the animation is complete",
+      description: 'Duration of the of the progress bar animation in seconds, it will switch to the next slide once the animation is complete',
     },
   },
 } satisfies Meta<typeof Accordion>
@@ -61,12 +61,12 @@ export const Regular: Story = {
     animationDuration: 10,
   },
   render: (args) => {
-    const [{ selected }, updateArgs] = useArgs();
+    const [{ selected }, updateArgs] = useArgs()
  
     const onSelect = (n: SelectionItem) => {
-      updateArgs({ selected: selectionToIndex(n, selected || 0, args.slides.length) });
+      updateArgs({ selected: selectionToIndex(n, selected as number || 0, args.slides.length) })
     }
 
-    return <Accordion {...args} selected={selected} onSelect={onSelect} />;
+    return <Accordion {...args} selected={selected as number} onSelect={onSelect} />
   },
 }
