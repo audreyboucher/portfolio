@@ -71,3 +71,15 @@ export default defineConfig([
   },
 ])
 ```
+
+## Storybook link in production
+
+The `storybook` source link is resolved at runtime:
+
+- uses `VITE_STORYBOOK_URL` when provided;
+- otherwise falls back to `${BASE_URL}storybook/`.
+
+Examples:
+
+- Local development (`.env.local`): `VITE_STORYBOOK_URL=http://localhost:6006/`
+- Production (`.env.production`): `VITE_STORYBOOK_URL=https://your-domain.com/storybook/`

@@ -12,6 +12,6 @@
   {
     "text": "storybook",
     "icon": "pen",
-    "link": ""
+    "link": "__STORYBOOK_URL__"
   }
 ]

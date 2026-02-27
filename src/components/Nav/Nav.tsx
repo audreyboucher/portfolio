@@ -2,10 +2,9 @@ import { useState, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 
-import useIsMobile from '@/hooks/useIsMobile'
-
 import { NavItem, type NavItemProps, SourceLink, SOURCE_LINKS, type SourceLinkType } from '@/components'
 import { Button, Icon, Icons } from '@/components/ui'
+import useIsMobile from '@/hooks/useIsMobile'
 
 import styles from './Nav.module.scss'
 

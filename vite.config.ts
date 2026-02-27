@@ -22,22 +22,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        importer: [
-          {
-            canonicalize(url) {
-              if (url.startsWith('@/')) {
-                return new URL(url.slice(2), `file://${path.resolve(__dirname, 'src')}/`)
-              }
-              return null
-            }
-          }
-        ]
-      }
-    }
-  },
   test: {
     environment: 'happy-dom',
     include: ['**/*.test.ts', '**/*.test.tsx'],
