@@ -5,7 +5,7 @@
   flex-basis: 33%;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 2.5rem;
 
   @media screen and (max-width: $mobile_nav_width) {
     flex-basis: 50%;
@@ -21,10 +21,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: .3125rem;
 
   & > p {
-    font-size: 14px;
+    font-size: .875rem;
   }
 }
 
@@ -32,9 +32,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5px;
-  width: 30px;
-  height: 30px;
+  margin-bottom: .3125rem;
+  width: 1.875rem;
+  height: 1.875rem;
 
   img {
     max-width: 100%;

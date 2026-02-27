@@ -11,10 +11,10 @@
   &:after {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    top: -.625rem;
+    left: -.625rem;
+    right: -.625rem;
+    bottom: -.625rem;
     z-index: 0;
   }
 
@@ -28,27 +28,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15px;
-  height: 15px;
+  width: .9375rem;
+  height: .9375rem;
   color: var(--background-tooltip);
-  font-size: 10px;
-  border: 1px solid var(--background-tooltip);
+  font-size: .625rem;
+  border: thin solid var(--background-tooltip);
   border-radius: 100%;
 }
 
 .infoBox {
   position: absolute;
   top: 100%;
-  left: -250px;
-  right: -250px;
+  left: -15.625rem;
+  right: -15.625rem;
   margin: auto;
-  border-radius: 5px;
-  padding: 15px;
-  width: 250px;
+  border-radius: .3125rem;
+  padding: .9375rem;
+  width: 15.625rem;
   max-width: 80vw;
   background: var(--text-dark);
   color: var(--background-secondary);
-  font-size: 10px;
+  font-size: .625rem;
   visibility: hidden;
   opacity: 0;
   z-index: 1;
