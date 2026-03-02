@@ -13,27 +13,18 @@ const AboutMeSection: FC = () => {
 
   const useSlideImage = (name: string): string => useImage(IMAGES, (key) => key.endsWith(name))!
 
-  const SLIDES: AccordionSlide[] = [
-    {
-      keywords: [t('keywords.curiosity'), t('keywords.consistency')],
-      description: t('paragraphs.curiosity').split('\n'),
-      cover: [useSlideImage('triathlon.jpeg')],
-    },
-    {
-      keywords: [t('keywords.empathy'), t('keywords.communication')],
-      description: t('paragraphs.empathy').split('\n'),
-      cover: [
-        useSlideImage('activism.gif'),
-        useSlideImage('activism.jpg'),
-      ],
-      className: styles.topAligned,
-    },
-    {
-      keywords: [t('keywords.patience'), t('keywords.attentiveness')],
-      description: t('paragraphs.patience').split('\n'),
-      cover: [useSlideImage('dog.jpg')],
-    },
+  const covers: AccordionSlide['cover'][] = [
+    [useSlideImage('triathlon.jpeg')],
+    [useSlideImage('activism.gif'), useSlideImage('activism.jpg')],
+    [useSlideImage('dog.jpg')],
   ]
+
+  const SLIDES: AccordionSlide[] = Object.values(t('slides', { returnObjects: true }))
+    .map(({ keywords, paragraphs } : { keywords: [string, string], paragraphs: string[] }, index) => ({
+      keywords,
+      description: paragraphs,
+      cover: covers[index],
+    }))
 
   return (
     <Section anchor='about' background='secondary' containerClassName={styles.container}>

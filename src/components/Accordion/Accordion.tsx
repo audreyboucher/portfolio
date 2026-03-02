@@ -9,9 +9,9 @@ import useIsMobile from '@/hooks/useIsMobile'
 import styles from './Accordion.module.scss'
 
 export type Slide = {
-  keywords: string[]
+  keywords: [string, string]
   description: string[]
-  cover: string[]
+  cover: [string, string?]
   className?: string
 }
 
@@ -107,18 +107,18 @@ const Accordion: FC<Props> = ({
             aria-label="Accordion Slide"
           >
             <figure className={styles.mobileOnly}>
-              <img src={cover[0]} alt={keywords.join(' & ')} />
+              <img src={cover ? cover[0] : ''} alt={(keywords ?? []).join(' & ')} />
             </figure>
 
             <h5
               tabIndex={isMobile ? -1 : 0}
               onKeyUp={({ key }) => { if ([' ', 'Enter'].includes(key)) onSelect(index) }}
             >
-              {keywords.map((keyword, i) => <span key={i}>{keyword}</span>)}
+              {(keywords ?? []).map((keyword, i) => <span key={i}>{keyword}</span>)}
             </h5>
 
             <div {...(!isMobile && index !== selected ? { 'aria-hidden': true } : {})}>
-              {description.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+              {(description ?? []).map((paragraph, i) => <p key={i}>{paragraph}</p>)}
             </div>
           </li>
         ))}

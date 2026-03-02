@@ -1,7 +1,7 @@
 import { useEffect, useState, type FC } from 'react'
 import classNames from 'classnames'
 
-import { StackedCarousel, type CarouselImage, Accordion, type AccordionSlide } from '@/components'
+import { StackedCarousel, Accordion, type AccordionSlide } from '@/components'
 import { ANIMATION_DURATION } from '@/components/ui'
 
 import styles from './InteractiveGallery.module.scss'
@@ -23,13 +23,6 @@ export const selectionToIndex = (selection: SelectionItem, currentIndex: number,
 const InteractiveGallery: FC<Props> = ({ title, slides, interval = ANIMATION_DURATION }) => {
   const [selectedItem, setSelectedItem] = useState<number>(0)
 
-  const parseImages = (slidesList: AccordionSlide[]): CarouselImage[] =>
-    slidesList.map(({ cover, keywords }, index) => ({
-      path: cover,
-      alt: keywords.join(' & '),
-      index,
-    }))
-
   useEffect(() => {
     const id = setTimeout(() => {
       setSelectedItem(selectionToIndex('next', selectedItem, slides.length))
@@ -46,7 +39,7 @@ const InteractiveGallery: FC<Props> = ({ title, slides, interval = ANIMATION_DUR
   return (
     <>
       <aside className={classNames(styles.carouselContainer, styles.desktopOnly)}>
-        <StackedCarousel images={parseImages(slides)} {...props} />
+        <StackedCarousel images={slides.map((slide, index) => ({ ...slide, index }))} {...props} />
       </aside>
 
       <article className={styles.textContainer}>

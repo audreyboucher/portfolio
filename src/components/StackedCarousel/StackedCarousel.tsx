@@ -1,15 +1,11 @@
 import { useEffect, useReducer, type FC } from 'react'
 import classNames from 'classnames'
 
-import type { SelectionItem } from '@/components'
+import type { AccordionSlide, SelectionItem } from '@/components'
 
 import styles from './StackedCarousel.module.scss'
 
-export type Image = {
-  index: number
-  path: string[]
-  alt: string
-}
+export type Image = { index: number } & Pick<AccordionSlide, 'cover' | 'keywords'>
 
 type Props = {
   images: Image[]
@@ -87,7 +83,7 @@ const ImageCarousel: FC<Props> = ({
       {
         order
           .map((i) => images.find(({ index }) => index === i)!)
-          .map(({ alt, path, index }, i) => (
+          .map(({ cover, keywords, index }, i) => (
             <li
               key={`listItem${index}-${i}`}
               className={styles.listItem}
@@ -99,8 +95,8 @@ const ImageCarousel: FC<Props> = ({
               tabIndex={0}
             >
               <figure>
-                {path.map((image, imageIndex) =>
-                  <img key={`image${index}-${i}-${imageIndex}`} src={image} alt={alt} />
+                {(cover ?? []).map((image, imageIndex) =>
+                  <img key={`image${index}-${i}-${imageIndex}`} src={image} alt={(keywords ?? []).join(' & ')} />
                 )}
               </figure>
             </li>

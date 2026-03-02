@@ -4,8 +4,8 @@ import StackedCarousel, { type Image } from './StackedCarousel'
 
 const image: Image = {
   index: 0,
-  path: ['http://placehold.co/325x450'],
-  alt: 'Image slide',
+  cover: ['http://placehold.co/325x450'],
+  keywords: ['Image', 'slide'],
 }
 
 const images: Image[] = [image, image, image].map((image, index) => ({ ...image, index }))

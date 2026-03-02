@@ -51,19 +51,35 @@
   },
   "about": {
     "title": "Un peu plus sur moi",
-    "keywords": {
-      "curiosity": "Curiosité",
-      "consistency": "Régularité",
-      "empathy": "Empathie",
-      "communication": "Communication",
-      "patience": "Patience",
-      "attentiveness": "Attention"
-    },
-    "paragraphs": {
-      "curiosity": "En tant que triathlète, je teste constamment les nouvelles méthodes d’entraînement et nouveaux équipements pour les sports que j’aime. Je suis en recherche constante de manières d’améliorer ma technique et mes performances.\nLes sports d’endurance m’ont appris à ne jamais rien prendre pour acquis.  J’ai appris à la dure que mon niveau de fitness dépend plus de la fréquence que de l’intensité d’entraînement : ce qui prend une éternité à construire peut disparaître en un clin d’oeil. Et je l’ai vécu personnellement.\nJe crois que la clé du succès réside dans notre capacité à se questioner soi-même, rechercher des solutions, les tester, échouer et répéter.\nEt je suis prête à m’investir pleinement dans ce process.",
-      "empathy": "Travailler avec des ONG de défense des animaux et de l'environnement est une part essentielle de ma vie.\nEn plus de satisfaire mon désir d’avoir un impact positif et d’éduquer le public sur les challenges que notre société doit affronter, c’est une excellement manière d’améliorer mes compétences en communication et de me challenger.\nDe nature introvertie, aborder des inconnus me semblait impossible au début. Cependant, après m'être lancée (et après quelques moments gênants, je dois bien l'avouer !), j’ai développé une approche et un discours plus naturels et efficaces.\nMa nouvelle capacité à connecter avec des personnes de tous horizons est boostée par mon sens de l’écoute et mon empathie innés. C’est vraiment un superpouvoir !",
-      "patience": "Vivre avec un animal de compagnie est à la fois une chance et un défi.\nAvant d’avoir Satay dans ma vie, je rêvait d'un style de vie actif où j’irais régulièrement courir avec mon toutou. Mais c’était sans compter le toutou en question ! Le moins qu’on puisse dire c’est qu’il n’est pas sportif, à mon grand désespoir.\nSi vous entendez des ronflements durant nos échanges, c’est assurément lui !\nJ’aime à penser que, même s’il n’est pas le chien dont je rêvais, il est celui dont j’avais besoin dans ma vie. Il m’a appris une qualité importante qui me faisait défaut : la patience."
-    }
+    "slides": [
+      {
+        "keywords": ["curiosité", "régularité"],
+        "paragraphs": [
+          "En tant que triathlète, je teste constamment les nouvelles méthodes d’entraînement et nouveaux équipements pour les sports que j’aime. Je suis en recherche constante de manières d’améliorer ma technique et mes performances.",
+          "Les sports d’endurance m’ont appris à ne jamais rien prendre pour acquis.  J’ai appris à la dure que mon niveau de fitness dépend plus de la fréquence que de l’intensité d’entraînement : ce qui prend une éternité à construire peut disparaître en un clin d’oeil. Et je l’ai vécu personnellement.",
+          "Je crois que la clé du succès réside dans notre capacité à se questioner soi-même, rechercher des solutions, les tester, échouer et répéter.",
+          "Et je suis prête à m’investir pleinement dans ce process."
+        ]
+      },
+      {
+        "keywords": ["empathie", "communication"],
+        "paragraphs": [
+          "Travailler avec des ONG de défense des animaux et de l'environnement est une part essentielle de ma vie.",
+          "En plus de satisfaire mon désir d’avoir un impact positif et d’éduquer le public sur les challenges que notre société doit affronter, c’est une excellement manière d’améliorer mes compétences en communication et de me challenger.",
+          "De nature introvertie, aborder des inconnus me semblait impossible au début. Cependant, après m'être lancée (et après quelques moments gênants, je dois bien l'avouer !), j’ai développé une approche et un discours plus naturels et efficaces.",
+          "Ma nouvelle capacité à connecter avec des personnes de tous horizons est boostée par mon sens de l’écoute et mon empathie innés. C’est vraiment un superpouvoir !"
+        ]
+      },
+      {
+        "keywords": ["patience", "attention"],
+        "paragraphs": [
+          "Vivre avec un animal de compagnie est à la fois une chance et un défi.",
+          "Avant d’avoir Satay dans ma vie, je rêvait d'un style de vie actif où j’irais régulièrement courir avec mon toutou. Mais c’était sans compter le toutou en question ! Le moins qu’on puisse dire c’est qu’il n’est pas sportif, à mon grand désespoir.",
+          "Si vous entendez des ronflements durant nos échanges, c’est assurément lui !",
+          "J’aime à penser que, même s’il n’est pas le chien dont je rêvais, il est celui dont j’avais besoin dans ma vie. Il m’a appris une qualité importante qui me faisait défaut : la patience."
+        ]
+      }
+    ]
   },
   "skills": {
     "technologies": "Technos",
