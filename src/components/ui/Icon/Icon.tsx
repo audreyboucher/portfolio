@@ -14,6 +14,12 @@ export enum Icons {
   Image = 'image',
   Pen = 'pen',
 
+  // Footer links
+  Email = 'email',
+  LinkedIn = 'linkedin',
+  Location = 'location',
+  Phone = 'phone',
+
   // Skills & tools
   CSS = 'css',
   Cypress = 'cypress',

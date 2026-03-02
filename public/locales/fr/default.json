@@ -182,5 +182,20 @@
         "tools": [ "Javascript", "SASS", "Figma", "Trello" ]
       }
     ]
+  },
+  "footer": {
+    "linkedin": {
+      "name": "LinkedIn",
+      "detail": "Voir le profil"
+    },
+    "location": {
+      "name": "Localisation"
+    },
+    "phone": {
+      "name": "Téléphone"
+    },
+    "email": {
+      "name": "Mail"
+    }
   }
 }
