@@ -3,7 +3,7 @@ import { useTranslation, Trans } from 'react-i18next'
 import classNames from 'classnames'
 
 import useImage, { type ImageModule } from '@/hooks/useImage'
-import { TextCarousel, SourceLink, Section, SOURCE_LINKS, type SourceLinkType } from '@/components'
+import { TextCarousel, SourceLink, Section, SOURCE_LINKS } from '@/components'
 import { Button } from '@/components/ui'
 import { defaultLanguage } from '@/i18next'
 
@@ -17,7 +17,7 @@ const SummarySection: FC = () => {
   const { t: t2 } = useTranslation('default', { keyPrefix: 'source links' })
   const resume = useImage(RESUMES, (key) => key.includes((i18n.language || defaultLanguage).toUpperCase()))
 
-  const source_links = SOURCE_LINKS as SourceLinkType[]
+  const source_links = SOURCE_LINKS
 
   return (
     <Section anchor="home" containerClassName={styles.container}>

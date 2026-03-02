@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-basis: 45%;
+  flex-direction: column;
+
+  p {
+    display: inline-flex;
+    align-self: center;
+    border: thin solid currentColor;
+    margin-bottom: 1.875rem;
+    padding: 1.25rem;
+    color: var(--primary);
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  h6 {
+    margin: .625rem 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  ul {
+    font-size: .875rem;
+    font-weight: 200;
+
+    li {
+      display: flex;
+
+      &:before {
+        content: '';
+        flex-shrink: 0;
+        margin: .625rem;
+        width: .1875rem;
+        height: .1875rem;
+        background: var(--text);
+        border-radius: 100%;
+      }
+    }
+  }
+}

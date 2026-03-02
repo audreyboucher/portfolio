@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 
-import { Header, SummarySection, AboutMeSection, SkillsSection } from '@/components'
+import { Header, SummarySection, AboutMeSection, SkillsSection, EducationSection } from '@/components'
 import { Loader } from '@/components/ui'
 
 const Home: FC = () => (
@@ -10,6 +10,7 @@ const Home: FC = () => (
     <SummarySection />
     <AboutMeSection />
     <SkillsSection />
+    <EducationSection />
   </main>
 )
 

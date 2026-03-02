@@ -4,11 +4,9 @@ import type { Props as SourceLinkType } from './SourceLink'
 const STORYBOOK_LINK_PLACEHOLDER = '__STORYBOOK_URL__'
 
 const getStorybookLink = (): string => {
-  const configuredStorybookLink = import.meta.env.VITE_STORYBOOK_URL?.trim()
+  const configuredStorybookLink = (import.meta.env.VITE_STORYBOOK_URL as string | undefined)?.trim()
 
-  if (configuredStorybookLink) {
-    return configuredStorybookLink
-  }
+  if (configuredStorybookLink) return configuredStorybookLink
 
   const baseUrl = import.meta.env.BASE_URL || '/'
   const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`

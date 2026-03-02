@@ -1,4 +1,5 @@
 export { default as Accordion, type Slide as AccordionSlide } from './Accordion/Accordion'
+export { default as Formation, type Props as FormationType } from './Formation/Formation'
 export { default as Header } from './Header/Header'
 export { default as InteractiveGallery, selectionToIndex, type SelectionItem } from './InteractiveGallery/InteractiveGallery'
 export { default as Nav } from './Nav/Nav'

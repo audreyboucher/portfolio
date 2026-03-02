@@ -80,5 +80,27 @@
     "gitlab": "I first was introduced to GitLab and its CI pipeline while working for AB Tasty. It’s an efficient and intuitive tool for continuous integration and delivery that I really enjoy working with.",
     "postgresql": "I recently was introduced to PostgreSQL but was already familiar with SQL requests prior. Its robust set of features is perfect for complex queries and makes it enjoyable to work with.",
     "jira": "It’s the perfect tool for bug tracking and agile project management. I’ve worked with it on many projects with very different organization styles and the least we can say is that it delivers!"
+  },
+  "formations": {
+    "title": "Education",
+    "iesa": {
+      "name": "Bachelor Multimedia Project Manager",
+      "school": "IESA Multimedia",
+      "description": [
+        "Graphic design, video editing & animation, UX design, marketing & communication",
+        "Introduction to front & back-end web development",
+        "Project & team management"
+      ]
+    },
+    "42": {
+      "name": "Computer Science Solutions Design and Programming",
+      "school": "42 School",
+      "description": [
+        "Software development & programming",
+        "Adaptation & innovation in digital technologies",
+        "Design & management of information systems",
+        "Management & communication for teams and projects"
+      ]
+    }
   }
 }

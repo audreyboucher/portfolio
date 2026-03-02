@@ -80,5 +80,27 @@
     "gitlab": "J’ai découvert GitLab et ses pipelines CI/CD en travaillant pour AB Tasty. C’est un outil efficace et intuitif pour l’intégration et la livraison continues que j’apprécie vraiment.",
     "postgresql": "J’ai récemment découvert PostgreSQL mais j’étais déjà familiarisé avec les requêtes SQL auparavant. Son ensemble de fonctionnalités robuste est parfait pour les requêtes complexes et rend le travail plus agréable.",
     "jira": "C’est l’outil parfait pour le suivi des bugs et la gestion de projets agiles. J’ai travaillé avec Jira sur de nombreux projets avec des styles d’organisation très différents et le moins que l’on puisse dire est qu’il est efficace !"
+  },
+  "formations": {
+    "title": "Formations",
+    "iesa": {
+      "name": "Bachelor Chef de Projet Multimédia",
+      "school": "IESA Multimédia",
+      "description": [
+        "Graphisme, montage vidéo et animation, UX design, marketing et communication",
+        "Introduction au développement web front-end et back-end",
+        "Gestion et organisation de projet et d'équipe"
+      ]
+    },
+    "42": {
+      "name": "Conception et programmation de solutions informatiques",
+      "school": "École 42 Paris",
+      "description": [
+        "Développement et programmation",
+        "Adaptation et innovation dans les technologies numériques",
+        "Conception et gestion de systèmes d'information",
+        "Management et communication pour les équipes et les projets"
+      ]
+    }
   }
 }

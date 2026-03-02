@@ -2,7 +2,7 @@ import { useState, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 
-import { NavItem, type NavItemProps, SourceLink, SOURCE_LINKS, type SourceLinkType } from '@/components'
+import { NavItem, type NavItemProps, SourceLink, SOURCE_LINKS } from '@/components'
 import { Button, Icon, Icons } from '@/components/ui'
 import useIsMobile from '@/hooks/useIsMobile'
 
@@ -14,7 +14,7 @@ type Props = {
 
 const SourceLinks: FC<Props> = ({ disabled }) => {
   const { t } = useTranslation('default', { keyPrefix: 'source links' })
-  const source_links = SOURCE_LINKS as SourceLinkType[]
+  const source_links = SOURCE_LINKS
 
   return (
     <div className={classNames(styles.sourceLinks, styles.mobileOnly)}>
