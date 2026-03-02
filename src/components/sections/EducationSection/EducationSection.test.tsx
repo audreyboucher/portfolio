@@ -11,7 +11,7 @@ describe('EducationSection (components/sections)', () => {
   it('displays the correct information', () => {
     const { getByText } = render(<EducationSection />)
 
-    expect(getByText('iesa.name')).toBeInTheDocument()
-    expect(getByText('42.name')).toBeInTheDocument()
+    expect(getByText('IESA Multimedia')).toBeInTheDocument()
+    expect(getByText('42 School')).toBeInTheDocument()
   })
 })

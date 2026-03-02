@@ -14,6 +14,10 @@ const meta = {
       control: 'text',
       description: 'Text to display in the tooltip',
     },
+    children: {
+      name: 'Children',
+      description: 'Element to trigger the tooltip on hover. If not provided, a question mark will be used as trigger.',
+    },
     containerClassName: {
       name: 'ContainerClassName',
       control: 'text',
@@ -35,9 +39,17 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const WithQuestionMark: Story = {
   args: {
     text: 'This is a tooltip',
+  },
+  decorators: [StoryWithAdditionalPadding],
+}
+
+export const WithCustomChildren: Story = {
+  args: {
+    text: 'This is a tooltip',
+    children: <button>Hover me</button>,
   },
   decorators: [StoryWithAdditionalPadding],
 }

@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, type ReactElement } from 'react'
 import { useValue, animate as Animate } from 'react-ui-animate'
 import classNames from 'classnames'
 
@@ -6,12 +6,13 @@ import styles from './Tooltip.module.scss'
 
 type Props = {
   text: string
+  children?: ReactElement
   containerClassName?: string
   questionMarkClassName?: string
   infoBoxClassName?: string
 };
 
-const Tooltip = ({ text, containerClassName, questionMarkClassName, infoBoxClassName }: Props) => {
+const Tooltip = ({ text, children, containerClassName, questionMarkClassName, infoBoxClassName }: Props) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const [x, setX] = useValue(0)
@@ -33,7 +34,7 @@ const Tooltip = ({ text, containerClassName, questionMarkClassName, infoBoxClass
         aria-describedby='tooltip'
         tabIndex={0}
       >
-        <span className={classNames(styles.questionMark, questionMarkClassName)}>?</span>
+        {children || <span className={classNames(styles.questionMark, questionMarkClassName)}>?</span>}
       </div>
 
       <Animate.div

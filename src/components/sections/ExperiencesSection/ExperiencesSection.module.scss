@@ -1,0 +1,56 @@
+@use '@/styles/breakpoints' as *;
+
+.section {
+  margin: 12.5rem 0;
+  overflow: visible;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 100%;
+}
+
+.experiencesContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-bottom: 4.375rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+}
+
+@media screen and (max-width: $mobile_nav_width) {
+  .desktopOnly {
+    display: none;
+  }
+
+  .experiencesContainer {
+    gap: 0;
+    width: 100%;
+  }
+}

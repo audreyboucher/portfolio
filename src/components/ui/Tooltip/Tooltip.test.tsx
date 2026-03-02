@@ -64,4 +64,35 @@ describe('Tooltip (components/ui)', () => {
       })
     })
   })
+
+  describe('with custom children', () => {
+    it('renders the children instead of the question mark', () => {
+      const { getByText, queryByText } = render(
+        <Tooltip text='This is a tooltip'>
+          <button>Hover me</button>
+        </Tooltip>
+      )
+
+      expect(getByText('Hover me')).toBeInTheDocument()
+      expect(queryByText('?')).not.toBeInTheDocument()
+    })
+
+    it('shows the tooltip on hover the children', () => {
+      const { getByText, getByRole } = render(
+        <Tooltip text='This is a tooltip'>
+          <button>Hover me</button>
+        </Tooltip>
+      )
+
+      waitFor(() => {
+        expect(getByRole('tooltip')).toHaveStyle('visibility: hidden')
+      })
+
+      fireEvent.mouseMove(getByText('Hover me'), { clientX: 100, clientY: 150 })
+
+      waitFor(() => {
+        expect(getByRole('tooltip')).toHaveStyle('visibility: visible')
+      })
+    })
+  })
 })

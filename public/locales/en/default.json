@@ -118,5 +118,69 @@
         "Management & communication for teams and projects"
       ]
     }
+  },
+  "experiences": {
+    "title": "Experiences",
+    "subtitle": "A journey towards success",
+    "list": [
+      {
+        "company": "Le Parisien",
+        "position": "Front-end developer",
+        "contractType": "Work/study part-time contract",
+        "description": [
+          "Migration from Symfony 2 to Symfony 3",
+          "Graphic revamp of the whole website",
+          "Creation of components and features related to events (sport events, elections, …)",
+          "Creation of emailing templates"
+        ],
+        "location": "Saint-Ouen, France",
+        "date": [ 2013, 2015 ],
+        "tools": [ "PHP", "Symfony", "SASS", "Trello" ]
+      },
+      {
+        "company": "AB Tasty",
+        "position": "Technical Support Engineer",
+        "description": [
+          "Implementation of components for events or promotional purposes",
+          "Feasibility analysis and time estimation of campaigns based on a brief provided by the client",
+          "Application of modifications on top of the client's existing website (usage of MutationObserver for SPA websites)",
+          "Creation of a command line (NodeJS) which uses AB Tasty's API to allow the TSE team to save time on repetitive tasks",
+          "Technical training for the CSM team"
+        ],
+        "location": "Paris, France & Madrid, Spain",
+        "date": [ 2017, 2021 ],
+        "tools": [ "Javascript", "Node", "SASS", "GitLab", "Trello" ]
+      },
+      {
+        "company": "AB Tasty",
+        "position": "React Front-end developer",
+        "description": [
+          "Creation of components/features for the B2B dashboard",
+          "Participation in the design and development of components for the design system",
+          "Unit & e2e testing (implementation of Cypress)",
+          "Continuous deployment and work on pipeline's jobs (Gitlab CI)",
+          "Focus on performance, maintainability, reusability, browser compatibility and GDPR compliance",
+          "Code review",
+          "Investigation and bug fix"
+        ],
+        "location": "Paris & Nantes, France",
+        "date": [ 2021, 2023 ],
+        "tools": [ "React", "Typescript", "Cypress", "Figma", "GitLab", "JIRA" ]
+      },
+      {
+        "company": "AB Tasty",
+        "position": "Technical Support Engineer",
+        "contractType": "Freelance",
+        "description": [
+          "Implementation of components for events or promotional purposes",
+          "Feasibility analysis and time estimation of campaigns based on a brief provided by the client",
+          "Application of modifications on top of the client's existing website (usage of MutationObserver for SPA websites)",
+          "Focus on accessibility and keyboard navigation"
+        ],
+        "location": "Remote",
+        "date": [ 2025 ],
+        "tools": [ "Javascript", "SASS", "Figma", "Trello" ]
+      }
+    ]
   }
 }

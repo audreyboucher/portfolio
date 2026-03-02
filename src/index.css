@@ -154,6 +154,7 @@
 
 :root {
   --primary: #007AFF;
+  --primary-dark: #005BB5;
   --primary-light: #1A87FF;
   --text: #FFFFFF;
   --text-dark: #B7B6B8;
@@ -165,6 +166,9 @@
   --disabled-light: #B2B3B8;
   --success: #4CAF50;
   --error: #FF5252;
+
+  --highlight-1: rgba(0, 122, 255, .6);
+  --highlight-2: rgba(0, 122, 255, 0);
 
   --skill-html: #F16524;
   --skill-css: #6F2FA0;

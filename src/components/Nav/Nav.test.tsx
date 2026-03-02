@@ -30,9 +30,9 @@ describe('Nav (components)', () => {
     it('additionally contains source links and overlay element', () => {
       const { getByLabelText } = render(<Nav />)
 
-      expect(getByLabelText('github')).toBeInTheDocument()
-      expect(getByLabelText('figma')).toBeInTheDocument()
-      expect(getByLabelText('storybook')).toBeInTheDocument()
+      expect(getByLabelText('See this website’s code on GitHub')).toBeInTheDocument()
+      expect(getByLabelText('See this website’s mockups on Figma')).toBeInTheDocument()
+      expect(getByLabelText('See this website’s components on Storybook')).toBeInTheDocument()
       expect(getByLabelText('Close menu overlay')).toBeInTheDocument()
     })
 

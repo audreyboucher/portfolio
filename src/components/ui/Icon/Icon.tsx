@@ -14,7 +14,7 @@ export enum Icons {
   Image = 'image',
   Pen = 'pen',
 
-  // Skills
+  // Skills & tools
   CSS = 'css',
   Cypress = 'cypress',
   Django = 'django',
@@ -25,10 +25,14 @@ export enum Icons {
   Illustrator = 'illustrator',
   Javascript = 'javascript',
   Jira = 'jira',
+  Node = 'node',
   Photoshop = 'photoshop',
+  PHP = 'php',
   PostgreSQL = 'postgresql',
   React = 'react',
   SASS = 'sass',
+  Symfony = 'symfony',
+  Trello = 'trello',
   Typescript = 'typescript',
   Vue = 'vue',
   XD = 'xd',

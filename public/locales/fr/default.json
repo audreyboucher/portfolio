@@ -118,5 +118,69 @@
         "Management et communication pour les équipes et les projets"
       ]
     }
+  },
+  "experiences": {
+    "title": "Expériences",
+    "subtitle": "Un parcours orienté vers la réussite",
+    "list": [
+      {
+        "company": "Le Parisien",
+        "position": "Développeur front-end",
+        "contractType": "Contrat d'alternance",
+        "description": [
+          "Migration de Symfony 2 vers Symfony 3",
+          "Refonte graphique de l'ensemble du site",
+          "Création de composants et fonctionnalités liés aux événements (événements sportifs, élections, …)",
+          "Création de templates d'emailing"
+        ],
+        "location": "Saint-Ouen, France",
+        "date": [ 2013, 2015 ],
+        "tools": [ "PHP", "Symfony", "SASS", "Trello" ]
+      },
+      {
+        "company": "AB Tasty",
+        "position": "Consultante technique (support)",
+        "description": [
+          "Mise en place de composants pour des événements ou des promotions",
+          "Analyse de faisabilité et estimation du temps des campagnes en fonction du brief fourni par le client",
+          "Application de modifications sur le site existant du client (utilisation de MutationObserver pour les sites SPA)",
+          "Création d'une ligne de commande (NodeJS) utilisant l'API d'AB Tasty pour permettre à l'équipe TSE de gagner du temps sur les tâches répétitives",
+          "Formation technique pour l'équipe CSM"
+        ],
+        "location": "Paris, France & Madrid, Espagne",
+        "date": [ 2017, 2021 ],
+        "tools": [ "Javascript", "Node", "SASS", "GitLab", "Trello" ]
+      },
+      {
+        "company": "AB Tasty",
+        "position": "Développeur front-end React",
+        "description": [
+          "Création de composants/fonctionnalités pour le tableau de bord B2B",
+          "Participation à la conception et au développement de composants pour le design system",
+          "Tests unitaires et end-to-end (implémentation de Cypress)",
+          "Déploiement continu et travail sur les jobs du pipeline (Gitlab CI)",
+          "Focus sur la performance, la maintenabilité, la réutilisabilité, la compatibilité navigateur et la conformité RGPD",
+          "Revue de code",
+          "Investigation et correction de bugs"
+        ],
+        "location": "Paris & Nantes, France",
+        "date": [ 2021, 2023 ],
+        "tools": [ "React", "Typescript", "Cypress", "Figma", "GitLab", "JIRA" ]
+      },
+      {
+        "company": "AB Tasty",
+        "position": "Consultante technique (support)",
+        "contractType": "Freelance",
+        "description": [
+          "Mise en place de composants pour des événements ou des promotions",
+          "Analyse de faisabilité et estimation du temps des campagnes en fonction du brief fourni par le client",
+          "Application de modifications sur le site existant du client (utilisation de MutationObserver pour les sites SPA)",
+          "Attention particulière sur l'accessibilité et la navigation au clavier"
+        ],
+        "location": "Télétravail",
+        "date": [ 2025 ],
+        "tools": [ "Javascript", "SASS", "Figma", "Trello" ]
+      }
+    ]
   }
 }

@@ -2,6 +2,8 @@ import '@testing-library/jest-dom/vitest'
 import { vi } from 'vitest'
 import { createElement } from 'react'
 
+import TRANSLATIONS from './public/locales/en/default.json'
+
 export const mockMedia = (query: string) => ({
   matches: false,
   media: query,
@@ -65,8 +67,19 @@ vi.mock('i18next-http-backend', () => ({ default: { type: 'backend', init: vi.fn
 vi.mock('i18next-browser-languagedetector', () => ({ default: { type: 'detector', init: vi.fn() } }))
 
 vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (str: string) => str,
+  useTranslation: (namespace?: string, options?: { keyPrefix?: string }) => ({
+    t: (key: string, opts?: any) => {
+      const translations: Record<string, any> = TRANSLATIONS
+      const fullKey = options?.keyPrefix ? `${options.keyPrefix}.${key}` : key
+      const keys = fullKey.split('.')
+      let result: any = translations
+
+      for (const k of keys) {  result = result?.[k] }
+
+      if (opts?.returnObjects) return result || []
+      
+      return result || key
+    },
     i18n: {
       on: vi.fn(),
       off: vi.fn(),

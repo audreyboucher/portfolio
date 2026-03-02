@@ -94,7 +94,7 @@ describe('NavItem (components)', () => {
 
     it('contains a "Coming soon" tag', () => {
       const { getByLabelText } = render(<NavItem name="test" disabled />)
-      expect(getByLabelText('Nav item')).toHaveTextContent('coming soon')
+      expect(getByLabelText('Nav item')).toHaveTextContent('Coming soon')
     })
   })
 })
