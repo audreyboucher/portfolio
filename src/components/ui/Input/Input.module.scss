@@ -1,0 +1,91 @@
+.inputContainer,
+.textareaContainer {
+  position: relative;
+  margin-bottom: 1.25rem;
+
+  label {
+    position: absolute;
+    top: .625rem;
+    left: 1.25rem;
+    transition: all .3s linear;
+  }
+
+  input, textarea {
+    width: 100%;
+    border: thin solid var(--text);
+    background: none;
+    color: var(--text);
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  input {
+    padding: 0 1.25rem;
+    height: 2.625rem;
+    line-height: 2.625rem;
+  }
+
+  textarea {
+    padding: .625rem 1.25rem;
+    height: 150px;
+    resize: none;
+  }
+
+  &.error {
+    position: relative;
+    margin-top: 1.875rem;
+
+    label {
+      color: var(--error);
+    }
+
+    input, textarea {
+      border-color: var(--error);
+      color: var(--error);
+    }
+  }
+
+  &.disabled {
+    label {
+      color: var(--disabled);
+    }
+
+    input, textarea {
+      border-color: var(--disabled);
+      color: var(--disabled);
+    }
+  }
+}
+
+.inputContainer {
+  &:has(:focus),
+  &:has(input:not(:placeholder-shown)) {
+    .errorMessage + label {
+      display: none;
+    }
+
+    label {
+      top: -1.875rem;
+      left: 0;
+    }
+  }
+}
+
+.textareaContainer {
+  &:has(:focus),
+  &:has(textarea:not(:placeholder-shown)) {
+    label {
+      display: none;
+    }
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: .625rem;
+  color: var(--error);
+  font-size: clamp(.75rem, 2vw, .875rem);
+}

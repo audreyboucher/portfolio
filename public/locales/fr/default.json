@@ -183,6 +183,35 @@
       }
     ]
   },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Entrons en contact !",
+    "fields": {
+      "name": "Nom",
+      "email": "Adresse mail",
+      "message": "Message"
+    },
+    "button": "Envoyer",
+    "success": "Votre message a bien été envoyé. Vous devriez recevoir un email de confirmation sous peu !",
+    "errors": {
+      "name": {
+        "required": "Veuillez entrer votre nom",
+        "minLength": "Votre nom doit comporter au moins {{amount}} caractères",
+        "maxLength": "Votre nom doit comporter au maximum {{amount}} caractères"
+      },
+      "email": {
+        "required": "Veuillez entrer votre adresse mail",
+        "minLength": "Votre adresse mail doit comporter au moins {{amount}} caractères",
+        "maxLength": "Votre adresse mail doit comporter au maximum {{amount}} caractères",
+        "pattern": "Veuillez entrer une adresse mail valide"
+      },
+      "message": {
+        "required": "Veuillez entrer votre message",
+        "minLength": "Votre message doit comporter au moins {{amount}} caractères",
+        "maxLength": "Votre message doit comporter au maximum {{amount}} caractères"
+      }
+    }
+  },
   "footer": {
     "linkedin": {
       "name": "LinkedIn",

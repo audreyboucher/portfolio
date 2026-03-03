@@ -1,0 +1,54 @@
+@use '@/styles/_breakpoints' as *;
+
+.section {
+  padding: 6.25rem 1.25rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  & > * {
+    flex: 1 0 45%;
+    max-width: 45%;
+  }
+
+  iframe {
+    min-height: 60rem;
+  }
+}
+
+.calendly {
+  height: auto !important;
+}
+
+.title {
+  color: var(--primary);
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  & + p {
+    margin-bottom: 3.125rem;
+    font-size: clamp(1.75rem, 2vw, 2rem);
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: $mobile_nav_width) {
+  .container {
+    flex-direction: column;
+    justify-content: stretch;
+
+    & > * {
+      flex: 1 0 100%;
+      max-width: 100%;
+
+      & + * {
+        margin-top: 6.25rem;
+      }
+    }
+  }
+}

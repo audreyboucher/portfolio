@@ -1,0 +1,20 @@
+.success {
+  margin-bottom: 3.125rem;
+  padding: .625rem 1.25rem;
+  border-radius: .625rem;
+  background: var(--success);
+  font-size: clamp(.75rem, 2vw, .875rem);
+}
+
+.inlineInputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.25rem;
+  width: 100%;
+
+  & > *  {
+    flex: 1 0 calc(50% - 1.25rem);
+    width: calc(50% - 1.25rem);
+  }
+}

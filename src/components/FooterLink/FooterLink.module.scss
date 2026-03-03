@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: center;
+  gap: 1.25rem;
   text-decoration: none;
 
   &.nonClickable {
@@ -12,29 +13,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55px;
-    height: 55px;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 100%;
     background: var(--primary);
 
     img {
-      width: 34px;
-      height: 34px;
+      width: 2.125rem;
+      height: 2.125rem;
     }
   }
 
   & > div {
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: .3125rem;
     color: var(--text);
 
     h6 {
-      font-size: 14px;
+      font-size: clamp(.75rem, 2vw, .875rem);
       font-weight: 600;
     }
 
     p {
-      margin-top: 5px;
-      font-size: 12px;
+      font-size: .75rem;
       font-weight: 400;
       opacity: .7;
 

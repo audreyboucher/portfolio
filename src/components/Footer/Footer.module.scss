@@ -1,7 +1,7 @@
 @use '@/styles/breakpoints' as *;
 
 .footer {
-  padding: 50px 40px;
+  padding: 3.125rem 2.5rem;
   background: var(--background);
 }
 
@@ -9,40 +9,28 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: 3.125rem;
   margin: 0 auto;
   max-width: $desktop_max_width;
-
-  & > * + * {
-    margin-top: 50px;
-  }
 }
 
 .linksContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 1.25rem .5rem;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.techsContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-}
-
 .copyright {
-  margin-top: 30px;
   text-align: center;
-  font-size: 14px;
+  font-size: clamp(.75rem, 2vw, .875rem);
   font-weight: 100;
 }
 
 @media screen and (max-width: $mobile_nav_width) and (min-width: $mobile_max_width) {
   .linksContainer a {
-    margin-bottom: 20px;
     width: 50%;
     flex: 1 0 50%;
   }
@@ -56,10 +44,6 @@
 
     a {
       align-self: flex-start;
-
-      & + a {
-        margin-top: 20px;
-      }
     }
   }
 }

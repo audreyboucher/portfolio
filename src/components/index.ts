@@ -1,4 +1,5 @@
 export { default as Accordion, type Slide as AccordionSlide } from './Accordion/Accordion'
+export { default as ContactForm } from './ContactForm/ContactForm'
 export { default as Experience, type ExperienceType } from './Experience/Experience'
 export { default as Footer } from './Footer/Footer'
 export { default as FooterLink, type Props as FooterLinkType } from './FooterLink/FooterLink'
