@@ -21,9 +21,9 @@ const ContactSection = () => {
           url='https://calendly.com/audreyboucher95/30min'
           pageSettings={{
             hideLandingPageDetails: true,
-            backgroundColor: 'var(--background)',
-            primaryColor: 'var(--primary)',
-            textColor: 'var(--text)',
+            backgroundColor: '#0A0B12',
+            primaryColor: '#007AFF',
+            textColor: '#FFFFFF',
           }}
           className={styles.calendly}
         />

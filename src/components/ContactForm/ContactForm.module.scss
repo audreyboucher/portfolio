@@ -1,9 +1,17 @@
-.success {
+.success,
+.error {
   margin-bottom: 3.125rem;
   padding: .625rem 1.25rem;
   border-radius: .625rem;
-  background: var(--success);
   font-size: clamp(.75rem, 2vw, .875rem);
+}
+
+.success {
+  background: var(--success);
+}
+
+.error {
+  background: var(--error);
 }
 
 .inlineInputs {

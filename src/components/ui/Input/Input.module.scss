@@ -7,6 +7,10 @@
     position: absolute;
     top: .625rem;
     left: 1.25rem;
+    max-width: calc(100% - 1.25rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: all .3s linear;
   }
 

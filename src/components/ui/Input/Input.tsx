@@ -1,4 +1,4 @@
-import type { DetailedHTMLProps, InputHTMLAttributes, TextareaHTMLAttributes, EventHandler, ChangeEvent } from 'react'
+import type { DetailedHTMLProps, InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
 import classNames from 'classnames'
 
 import type { Common } from '@/types'
@@ -12,20 +12,17 @@ export type Props = {
   type: InputType['type'] | 'textarea'
   label: string
   error?: string
-  onChange?: EventHandler<ChangeEvent<HTMLElement>>
 } & Common<InputType, TextareaType>
 
-const Input = ({ type, label, error, onChange, ...props }: Props) => {
+const Input = ({ type, label, error, ...props }: Props) => {
   const id = label.toLowerCase()
 
   const commonProps = {
     id,
     name: id,
     placeholder: label,
-    tabIndex: 0,
-    onChange: (value: ChangeEvent<HTMLElement>) => {
-      if (onChange) onChange(value)
-    },
+    tabIndex: props.disabled ? -1 : 0,
+    ...(props.disabled ? { 'aria-disabled': true } : {}),
     ...props,
   }
 
@@ -36,8 +33,10 @@ const Input = ({ type, label, error, onChange, ...props }: Props) => {
         [styles.disabled]: !!props.disabled,
       })}
     >
-      {!!error?.length && <p className={styles.errorMessage}>{ error }</p>}
-      <label htmlFor={label.toLowerCase()}>{ label }</label>
+      {!!error?.length && <p className={styles.errorMessage} aria-label={`${label} Error`}>{error}</p>}
+
+      <label htmlFor={label.toLowerCase()} aria-labelledby={id}>{label}</label>
+
       {type === 'textarea'
         ? <textarea {...commonProps} />
         : <input {...commonProps} />

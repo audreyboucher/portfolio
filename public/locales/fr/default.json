@@ -193,6 +193,7 @@
     },
     "button": "Envoyer",
     "success": "Votre message a bien été envoyé. Vous devriez recevoir un email de confirmation sous peu !",
+    "error": "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
     "errors": {
       "name": {
         "required": "Veuillez entrer votre nom",
@@ -225,6 +226,32 @@
     },
     "email": {
       "name": "Mail"
+    }
+  },
+  "emails": {
+    "confirmation": {
+      "title": "Message reçu !",
+      "paragraphs": [
+        "Merci pour votre message sur",
+        "Soyez assuré qu'il a bien été reçu et qu'une réponse vous sera apportée rapidement.",
+        "Voici un récap des informations envoyées :"
+      ],
+      "fields": {
+        "name": "Nom :",
+        "email": "Adresse mail :"
+      },
+      "disclaimer": [
+        "Cet email vous a été envoyé en tant que confirmation et récapitulatif du message que vous avez envoyé.",
+        "Votre adresse mail n'a été ajoutée à aucune liste commerciale ou newsletter et vous ne recevrez aucun message supplémentaire à l'avenir, sauf pour la réponse que votre message pourrait nécessiter."
+      ]
+    },
+    "notification": {
+      "title": "Nouveau message de contact !",
+      "paragraph": "Voici les détails du nouveau message reçu :",
+      "fields": {
+        "name": "Nom :",
+        "email": "Adresse mail :"
+      }
     }
   }
 }
