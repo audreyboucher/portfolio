@@ -140,6 +140,10 @@ $left_margin: 5rem;
   .sourceLinks,
   .button {
     display: flex;
+
+    a {
+      justify-content: center;
+    }
   }
 }
 
