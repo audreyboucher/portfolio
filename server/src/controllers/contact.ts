@@ -2,9 +2,12 @@ import type { Request, Response, NextFunction } from 'express'
 
 import { sendNotificationEmail } from '../services/email'
 import Contact from '../models/Contact'
+import { connectDatabase } from '../config/database'
 
 export const submitContactForm = async ({ body }: Request, res: Response, next: NextFunction) => {
   try {
+    await connectDatabase()
+
     const { name, email, message, lang } = body
 
     if (!name || !email || !message || !lang) {
