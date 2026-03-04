@@ -23,6 +23,7 @@
     "@types/node": "^24.10.1",
     "@types/nodemailer": "^7.0.11",
     "@types/object-path": "^0.11.4",
+    "tsc-alias": "^1.8.16",
     "typescript": "5.8.3"
   }
 }
