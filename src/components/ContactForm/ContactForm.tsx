@@ -81,7 +81,7 @@ const ContactForm = () => {
   }, [success])
 
   return (
-    <form onSubmit={() => { handleSubmit(submitForm) }} aria-label='Contact Form'>
+    <form onSubmit={handleSubmit(submitForm)} aria-label='Contact Form'>
       {success && <p className={styles.success} aria-label='Success Message'>{t('success')}</p>}
       {error && <p className={styles.error} aria-label='Error Message'>{t('error')}</p>}
 
