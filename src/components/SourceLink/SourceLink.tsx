@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import classNames from 'classnames'
 
-import { Icon, type Icons } from '@/components/ui'
+import { Icon, Icons } from '@/components/ui'
 
 import styles from './SourceLink.module.scss'
 
@@ -11,6 +11,24 @@ export type Props = {
   link: string
   disabled?: boolean
 }
+
+export const SOURCE_LINKS: Props[] = [
+  {
+    text: "github",
+    icon: Icons.Code,
+    link: "https://github.com/audreyboucher/portfolio"
+  },
+  {
+    text: "figma",
+    icon: Icons.Image,
+    link: "https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio"
+  },
+  {
+    text: "storybook",
+    icon: Icons.Pen,
+    link: import.meta.env.VITE_STORYBOOK_URL as string
+  },
+]
 
 const SourceLink: FC<Props> = ({ text, icon, link, disabled }) => (
   <a

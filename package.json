@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "npx tsx server/server.ts",
-    "build": "tsc -b && vite build && npm run build-storybook",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",

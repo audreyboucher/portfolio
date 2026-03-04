@@ -9,8 +9,7 @@ export { default as InteractiveGallery, selectionToIndex, type SelectionItem } f
 export { default as Nav } from './Nav/Nav'
 export { default as NavItem, type Props as NavItemProps } from './NavItem/NavItem'
 export { default as Skill, type SkillType } from './Skill/Skill'
-export { default as SourceLink, type Props as SourceLinkType } from './SourceLink/SourceLink'
-export { default as SOURCE_LINKS } from './SourceLink/sourceLinks'
+export { default as SourceLink, SOURCE_LINKS, type Props as SourceLinkType } from './SourceLink/SourceLink'
 export { default as StackedCarousel, type Image as CarouselImage } from './StackedCarousel/StackedCarousel'
 export { default as TextCarousel } from './TextCarousel/TextCarousel'
 

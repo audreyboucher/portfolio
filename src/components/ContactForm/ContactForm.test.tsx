@@ -152,7 +152,7 @@ describe('ContactForm (components)', () => {
       })
     })
 
-    it('calls http://localhost:5000/api/contact/ with form payload', () => {
+    it('calls /api/contact/ with form payload', () => {
       const { getByPlaceholderText, getByRole } = render(<ContactForm />)
 
       fillValidForm(getByPlaceholderText)
@@ -161,7 +161,7 @@ describe('ContactForm (components)', () => {
       waitFor(() => {
         expect(postSpy).toHaveBeenCalledTimes(1)
         expect(postSpy).toHaveBeenCalledWith(
-          'http://localhost:5000/api/contact/',
+          `${import.meta.env.VITE_API_URL}/api/contact/`,
           expect.objectContaining({
             name: 'John Doe',
             email: 'john.doe@example.com',

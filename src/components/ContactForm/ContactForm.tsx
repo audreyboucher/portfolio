@@ -53,7 +53,7 @@ const ContactForm = () => {
     setLoading(true)
 
     axios
-      .post('http://localhost:5000/api/contact/', { ...data, lang: i18n.language })
+      .post(`${import.meta.env.VITE_API_URL}/api/contact/`, { ...data, lang: i18n.language })
       .then((response) => {
         console.log(response)
         resetForm()
