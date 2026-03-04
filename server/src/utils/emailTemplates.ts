@@ -3,8 +3,8 @@ import fs from 'fs'
 import { fileURLToPath } from 'url'
 import objectPath from 'object-path'
 
-import EN from '../../../public/locales/en/default.json'
-import FR from '../../../public/locales/fr/default.json'
+import EN from '../../../public/locales/en/default.json' with { type: 'json' }
+import FR from '../../../public/locales/fr/default.json' with { type: 'json' }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 

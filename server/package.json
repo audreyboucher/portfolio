@@ -2,9 +2,9 @@
   "name": "express",
   "type": "module",
   "scripts": {
-    "start": "vercel dev",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc"
+    "dev": "vercel dev",
+    "start": "node dist/server/src/index.js",
+    "build": "tsc && tsc-alias"
   },
   "dependencies": {
     "cors": "^2.8.6",
