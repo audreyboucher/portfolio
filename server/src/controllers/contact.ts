@@ -1,8 +1,8 @@
 import type { Request, Response, NextFunction } from 'express'
 
-import { sendNotificationEmail } from '../services/email'
-import Contact from '../models/Contact'
-import { connectDatabase } from '../config/database'
+import { sendNotificationEmail } from '../services/email.js'
+import Contact from '../models/Contact.js'
+import { connectDatabase } from '../config/database.js'
 
 export const submitContactForm = async ({ body }: Request, res: Response, next: NextFunction) => {
   try {
