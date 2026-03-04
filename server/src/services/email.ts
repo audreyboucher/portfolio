@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer'
-import { generateEmail, generateSubject, type SupportedLang, type EmailEventName } from '../utils/emailTemplates'
+import { generateEmail, generateSubject, type SupportedLang, type EmailEventName } from '../utils/emailTemplates.js'
 
 const createTransporter = () => nodemailer.createTransport({
   service: 'gmail',
