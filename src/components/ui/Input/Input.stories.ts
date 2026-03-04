@@ -31,10 +31,6 @@ const meta = {
       description: 'Whether the input field is disabled',
       default: false,
     },
-    onChange: {
-      action: 'changed',
-      description: 'Event handler for when the input value changes',
-    },
   },
 } satisfies Meta<typeof Input>
 

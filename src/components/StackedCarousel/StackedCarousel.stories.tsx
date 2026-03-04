@@ -40,18 +40,18 @@ export const Regular: Story = {
     images: [
       {
         index: 0,
-        path: ['http://placehold.co/325x450'],
-        alt: 'Image',
+        cover: ['http://placehold.co/325x450'],
+        keywords: ['Placeholder','Image'],
       },
       {
         index: 1,
-        path: ['http://placehold.co/325x450'],
-        alt: 'Image',
+        cover: ['http://placehold.co/325x450'],
+        keywords: ['Placeholder','Image'],
       },
       {
         index: 2,
-        path: ['http://placehold.co/325x450'],
-        alt: 'Image',
+        cover: ['http://placehold.co/325x450'],
+        keywords: ['Placeholder','Image'],
       },
     ],
     selected: 0,
