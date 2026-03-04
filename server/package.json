@@ -2,7 +2,6 @@
   "name": "express",
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
     "start": "node dist/server/src/index.js",
     "build": "tsc && tsc-alias"
   },
