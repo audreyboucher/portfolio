@@ -3,8 +3,8 @@ import fs from 'fs'
 import { fileURLToPath } from 'url'
 import objectPath from 'object-path'
 
-import EN from '../../public/locales/en/default.json'
-import FR from '../../public/locales/fr/default.json'
+import EN from '../../../public/locales/en/default.json'
+import FR from '../../../public/locales/fr/default.json'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -32,12 +32,12 @@ export const generateSubject = (type: EmailEventName, lang: SupportedLang) => {
 }
 
 const loadEmailTemplate = (filename: string): string => {
-  const templatePath = path.join(__dirname, `../../public/assets/emailings/${filename}.html`)
+  const templatePath = path.join(__dirname, `../../../public/assets/emailings/${filename}.html`)
   return fs.readFileSync(templatePath, 'utf-8')
 }
 
 const replaceLogo = (html: string) => {
-  const imagePath = path.join(__dirname, '../../public/assets/images/logo.png')
+  const imagePath = path.join(__dirname, '../../../public/assets/images/logo.png')
   const imageBuffer = fs.readFileSync(imagePath)
   const base64 = imageBuffer.toString('base64')
 
