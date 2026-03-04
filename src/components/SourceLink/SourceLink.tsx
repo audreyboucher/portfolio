@@ -14,17 +14,17 @@ export type Props = {
 
 export const SOURCE_LINKS: Props[] = [
   {
-    text: "github",
+    text: 'github',
     icon: Icons.Code,
-    link: "https://github.com/audreyboucher/portfolio"
+    link: 'https://github.com/audreyboucher/portfolio'
   },
   {
-    text: "figma",
+    text: 'figma',
     icon: Icons.Image,
-    link: "https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio"
+    link: 'https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio'
   },
   {
-    text: "storybook",
+    text: 'storybook',
     icon: Icons.Pen,
     link: import.meta.env.VITE_STORYBOOK_URL as string
   },

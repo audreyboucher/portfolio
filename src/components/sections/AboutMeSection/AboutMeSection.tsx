@@ -6,7 +6,7 @@ import useImage, { type ImageModule } from '@/hooks/useImage'
 
 import styles from './AboutMeSection.module.scss'
 
-const IMAGES = import.meta.glob<ImageModule>('./images/*.(png|jpg|jpeg|gif)')
+const IMAGES = import.meta.glob<ImageModule>('./images/*.{jpg,jpeg,gif}')
 
 const AboutMeSection: FC = () => {
   const { t } = useTranslation('default', { keyPrefix: 'about' })
