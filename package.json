@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "npx tsx server/index.ts",
+    "server": "npx tsx express/src/index.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -16,6 +16,7 @@
     "pre-commit": "npm run lint && npm run test"
   },
   "dependencies": {
+    "@vercel/react-router": "^1.2.5",
     "axios": "^1.13.6",
     "classnames": "^2.5.1",
     "cors": "^2.8.6",
