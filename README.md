@@ -1,85 +1,101 @@
-# React + TypeScript + Vite
+# Audrey Boucher's portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this repository, you'll find the code that's currently used on [my portfolio](https://www.audreyboucher.dev/).
+This repository is meant as a small overview of the way I structure and code my React projects.
 
-Currently, two official plugins are available:
+## Mockups
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Additionally, the mockups are available on [Figma](https://www.figma.com/design/gg5eF6rQ0m0KwHf52zqwZq/Portfolio).
+It's meant to showcase my skills as a UI/UX designer.
 
-## React Compiler
+## To do
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+This is an unfinished project and here is still a lot of work to do:
 
-## Expanding the ESLint configuration
+### New content
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- VAG Project:
+  * Create mockups
+  * Create new page
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend & Security
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Validate/sanitize contact payloads
+- Enforce body size limits
+- Return consistent error shapes for frontend handling
+- Protect the form from robots
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Code improvements
+
+- E2E Coverage:
+  * Implement *Playwright*
+  * Add core flows for home load, language switch & contact form submission
+- CI/CD:
+  * Add *GitHub Actions* pipelines for both frontend and backend on every PR
+
+## Run the project locally
+
+### Installation
+
+```shell
+$ npm install
+$ npm --prefix ./server install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+In both the root folder and the ./server one, there is a `.env.example` file stating what environment variables are expected.
+To run the project locally, rename it `.env.local` and adapt the variables in both of them with your own.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+#### MongoDB
+
+How to obtain the `MONGO_URI`:
+- Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create/sign in to a project
+- Create a cluster (free tier is fine)
+- Create a database user (username + password) and keep the password
+- In `Database > Clusters > Connect > Drivers`:
+  * Choose the latest Node.js driver
+  * Copy the connection string like: `mongodb+srv://<db_user>:<db_password>@portfolio.2qrigzj.mongodb.net/?appName=<app_name>`
+  * Replace the password with the one previously stored
+- Update the `MONGO_URI` env variable
+
+#### Google App Password
+
+The `EMAIL_USER` simply is your Gmail email address.
+In order to use another mail client, update `createTransporter`'s `service` in [email.ts](./server/src/services/email.ts)
+Here is the list of services that can be used: [Nodemailer's services](https://nodemailer.com/smtp/well-known-services#list-of-built-in-services)
+
+How to obtain the `EMAIL_PASS` (with Google App Password):
+- Open [Google Account Security](https://myaccount.google.com/security)
+- Turn the 2-Step Verification on
+- Go to [App Passwords](https://myaccount.google.com/apppasswords)
+- Choose the app/device and click on `Generate`
+- Update the `EMAIL_PASS` with the generated password
+
+### Start
+
+```shell
+$ npm run dev
 ```
 
-## Storybook link in production
+This action starts concurrently:
+- the *React* project on [http://localhost:5173](http://localhost:5173)
+- the server side (with *Express* & *MongoDB*) on [http://localhost:3000](http://localhost:3000)
+- the *Storybook* on [http://localhost:6006](http://localhost:6006)
 
-The `storybook` source link is resolved at runtime:
+### Tests
 
-- uses `VITE_STORYBOOK_URL` when provided;
-- otherwise falls back to `${BASE_URL}storybook/`.
+There is a large coverage of unit test on the components, hooks and utility functions using *Vitest* & *React Testing Library*.
+To run the tests, just launch the following command line:
 
-Examples:
+```shell
+$ npm run test
+```
 
-- Local development (`.env.local`): `VITE_STORYBOOK_URL=http://localhost:6006/`
-- Production (`.env.production`): `VITE_STORYBOOK_URL=https://your-domain.com/storybook/`
+### Linter
+
+In order to remain consistent throughout the project and avoid basic mistakes, I implemented a bunch of rules through *ESLint*.
+
+```shell
+$ npm run lint
+```

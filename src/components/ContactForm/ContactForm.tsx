@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type SubmitEventHandler } from 'react'
 import { useForm, type RegisterOptions } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import axios from 'axios'
@@ -73,6 +73,10 @@ const ContactForm = () => {
       : undefined,
   })
 
+  const onSubmit: SubmitEventHandler<HTMLFormElement> = (event) => {
+    void handleSubmit(submitForm)(event)
+  }
+
   useEffect(() => {
     if (success) {
       const id = setTimeout(() => setSuccess(false), 5000)
@@ -81,7 +85,7 @@ const ContactForm = () => {
   }, [success])
 
   return (
-    <form onSubmit={handleSubmit(submitForm)} aria-label='Contact Form'>
+    <form onSubmit={onSubmit} aria-label='Contact Form'>
       {success && <p className={styles.success} aria-label='Success Message'>{t('success')}</p>}
       {error && <p className={styles.error} aria-label='Error Message'>{t('error')}</p>}
 

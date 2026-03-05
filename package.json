@@ -4,15 +4,17 @@
   "version": "2.1.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "server": "npm --prefix ./server run dev",
+    "dev": "concurrently \"npm run server:dev\" \"npm run start\" \"npm run storybook\"",
+    "start": "vite",
+    "server": "npm --prefix ./server run build && npm --prefix ./server run start",
+    "server:dev": "npm --prefix ./server run dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook:build": "storybook build",
     "pre-commit": "npm run lint && npm run test"
   },
   "dependencies": {
